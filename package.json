@@ -1,8 +1,8 @@
 {
-  "name": "react-two-points-range-selector",
-  "version": "0.0.2",
+  "name": "react-two-points-range",
+  "version": "0.0.3",
   "description": "React component for select range in the from",
-  "main": "index.js",
+  "main": "assets/js/src/index",
   "devDependencies": {
     "babel-core": "^5.8.25",
     "babel-eslint": "^4.1.3",
