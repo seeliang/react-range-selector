@@ -23,9 +23,9 @@
     "url": "https://github.com/seeliang/kickoff.git"
   },
   "keywords": [
-    "kickoff"
+    "React range selector picker"
   ],
-  "author": "sihui me@sihuiliang.com",
+  "author": "sihui / me@sihuiliang.com",
   "license": "ISC",
   "dependencies": {
     "lodash": "^3.10.1",
