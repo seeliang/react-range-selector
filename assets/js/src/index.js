@@ -6,7 +6,8 @@ class RangeSelector extends React.Component{
   displayName: 'RangeSelector';
   propTypes: {
     name: React.PropTypes.string.isRequired,
-    range: React.PropTypes.array.isRequired,
+    range: React.PropTypes.array,
+    customiseRange: React.PropTypes.array,
     componentName: React.PropTypes.string.isRequired,
     initalSelected: React.PropTypes.array
   }
@@ -81,28 +82,41 @@ class RangeSelector extends React.Component{
       stateClassSet,
       i ,
       rangelist=[],
+      rangeStart,
+      rangeEnd;
+
+    if (this.props.range && this.props.customiseRange) {
+      return (<h1>Please use range or customiseRange, not both</h1>);
+    } else if (!this.props.range && !this.props.customiseRange) {
+      return (<h1>Please set range or customiseRange</h1>);
+    }
+
+    if (this.props.range) {
       rangeStart = this.props.range[0],
       rangeEnd = this.props.range[1];
-
-    for (i = rangeStart; i <= rangeEnd; i++ ) {
-      rangelist.push(i);
+      for (i = rangeStart; i <= rangeEnd; i++ ) {
+        rangelist.push(i);
+      }
+    } else {
+      rangelist = this.props.customiseRange;
     }
 
     inputList = rangelist.map(
       (number,i) => {
         checkboxName = this.props.componentName + '_' +
-          this.props.name + '-' + number;
-        selected = this.isInSelected(number);
-        stateClassSet = this.stateClasslist(number);
+          this.props.name + '-' + i;
+        selected = this.isInSelected(i);
+        stateClassSet = this.stateClasslist(i);
 
         return (
           <Checkbox
               inputChecked={this.updateSelected}
               isSelected={selected}
               key={i}
+              labelContent={number}
               linked={checkboxName}
               stateClass={stateClassSet}
-              value={number}
+              value={i}
           />
         );
       },this);

@@ -30,7 +30,7 @@ class InputCheckbox extends React.Component {
             className={labelClass}
             htmlFor={linked}
         >
-          {this.props.value}
+          {this.props.labelContent}
         </label>
       </div>
     );
