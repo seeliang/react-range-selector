@@ -104,7 +104,7 @@ class RangeSelector extends React.Component{
     inputList = rangelist.map(
       (number,i) => {
         checkboxName = this.props.componentName + '_' +
-          this.props.name + '-' + i;
+          this.props.name.replace(/\s/g, '-').toLowerCase() + '-' + i;
         selected = this.isInSelected(i);
         stateClassSet = this.stateClasslist(i);
 

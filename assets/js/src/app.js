@@ -21,7 +21,7 @@ class RangeSelectorGroup extends React.Component{
         <RangeSelector componentName={'range-selector'}
             customiseRange={[0.8,1.0,1.4,1.6,1.8,2.0,2.2]}
             initalSelected={[2,4]}
-            name={'Engine-size'}
+            name={'Engine size'}
         />
       </div>
     );
