@@ -1,5 +1,5 @@
 {
-  "name": "react-two-points-range",
+  "name": "react-two-points-range-selector",
   "version": "0.1.0",
   "description": "React component for select range in the from",
   "main": "assets/js/src/index",
