@@ -1,6 +1,6 @@
 {
   "name": "react-two-points-range-selector",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React component for select range in the from",
   "main": "assets/js/src/index",
   "devDependencies": {
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/seeliang/kickoff.git"
+    "url": "https://github.com/seeliang/react-range-selector"
   },
   "keywords": [
     "React range selector picker"
