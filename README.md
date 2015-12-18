@@ -3,6 +3,9 @@ the [html5 input range](https://www.w3.org/wiki/HTML/Elements/input/range) only 
 [Demo](http://seeliang.github.io/react-range-selector/)
 
 ## Features
+* based on [BEM](https://css-tricks.com/bem-101/)
 * has "is-start " class, "in-range" and "is-end" class for special set for styling  
 * support initial selected range
 * support customize range
+
+[![Analytics](https://ga-beacon.appspot.com/UA-71361289-1/two-points/read-me)](https://github.com/igrigorik/ga-beacon)
