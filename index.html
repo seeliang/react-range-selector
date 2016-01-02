@@ -9,10 +9,23 @@
       .range-selector__item-input-text {
         display: inline-block;
         width: 20%;
-        background-color: gray;
+        background-color: #ddd;
         color: white;
         text-align: center;
       }
+
+      .range-selector__item-input.is-in-range .range-selector__item-input-text {
+        background: black;
+      }
+
+      .range-selector__item-input.is-start .range-selector__item-input-text {
+        color: darkseagreen
+      }
+
+      .range-selector__item-input.is-end .range-selector__item-input-text {
+        color: skyblue;
+      }
+
       .range-selector__item-input {
         margin: 0.15em 0;
       }
