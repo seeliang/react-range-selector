@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-      .form-submit,
+      .search-form__submit,
       .range-selector__item-title {
         display: block;
         clear: both;
@@ -14,6 +14,7 @@
       .range-selector__item-input {
         display: inline-block;
         float: left;
+        text-align: center;
       }
       .range-selector__item-input-text {
         display: block;
@@ -21,7 +22,6 @@
         padding: 0 1em;
         background-color: #ddd;
         color: white;
-        text-align: center;
       }
       .range-selector__item-input .range-selector__item-input-text:hover {
         cursor: pointer;
@@ -32,15 +32,12 @@
       .range-selector__item-input-checkbox {
         display: none;
       }
-
       .range-selector__item-input.is-start .range-selector__item-input-text {
         color: darkseagreen
       }
-
       .range-selector__item-input.is-end .range-selector__item-input-text {
         color: skyblue;
       }
-
       .range-selector__item-input {
         margin: 0.15em 0;
       }
@@ -52,7 +49,7 @@
     <form >
       <fieldset>
         <div id="app"></div>
-        <input type="submit" class="form-submit" value="search">
+        <input type="submit" class="search-form__submit" value="search">
       </fieldset>
     </form>
     <script src="build/js/app-bundle.js"></script>
