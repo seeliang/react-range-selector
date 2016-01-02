@@ -1,6 +1,6 @@
 {
   "name": "react-two-points-range-selector",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "React component for select range in the form",
   "main": "assets/js/src/index",
   "devDependencies": {
