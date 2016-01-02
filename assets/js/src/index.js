@@ -121,7 +121,7 @@ class RangeSelector extends React.Component{
 
     return (
       <div className={'range-selector__item'}>
-        <b>{this.props.name}</b>
+        <b className={'range-selector__item-title'}>{this.props.name}</b>
         {inputList}
       </div>
     );
