@@ -63,9 +63,7 @@ class RangeSelector extends React.Component{
     let start = this.state.selected[0],
       end = this.state.selected[1];
     if (this.isInSelected(number)){
-      if(!end) {
-        return startClass;
-      } else if  (number === start) {
+      if (number === start) {
         return startClass + ' ' + inRangeClass;
       } else if (number === end) {
         return 'is-end' + ' ' + inRangeClass;
