@@ -59,7 +59,7 @@ class RangeSelector extends React.Component{
 
   stateClasslist(number) {
     const inRangeClass = 'is-in-range',
-      startClass = 'is-strat';
+      startClass = 'is-start';
     let start = this.state.selected[0],
       end = this.state.selected[1];
     if (this.isInSelected(number)){
