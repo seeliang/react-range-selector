@@ -19854,7 +19854,7 @@
 	        { className: 'range-selector__item' },
 	        _react2['default'].createElement(
 	          'b',
-	          null,
+	          { className: 'range-selector__item-title' },
 	          this.props.name
 	        ),
 	        inputList
