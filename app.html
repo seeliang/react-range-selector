@@ -17,6 +17,27 @@
         <input type="submit" value="go">
       </fieldset>
     </form>
-    <script src="build/js/app-bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.5/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.5/react-dom.min.js"></script>
+    <script>
+      window.rangeSelector = {
+        'DOMid': 'app',
+        'selectors': {
+          'Seats': {
+            'range': [2,7]
+          },
+          'Doors': {
+            'range': [2,5],
+            'initalSelected': [0,2]
+          },
+          'Engine size': {
+            'range': [0.8,1.0,1.4,1.6,1.8,2.0,2.2],
+            'initalSelected': [2,4]
+          }
+        }
+      }
+
+    </script>
+    <script src="build/js/react-range-selector.js"></script>
   </body>
 </html>
