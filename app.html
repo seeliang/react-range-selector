@@ -13,7 +13,7 @@
   <body>
     <form >
       <fieldset>
-        <div id="app"></div>
+        <div id="range-selector"></div>
         <input type="submit" value="go">
       </fieldset>
     </form>
@@ -21,17 +21,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.5/react-dom.min.js"></script>
     <script>
       window.rangeSelector = {
-        'DOMid': 'app',
+        'DOMid': 'range-selector',
         'selectors': {
-          'Seats': {
-            'range': [2,7]
+          '1': {
+            'name': 'Seats',
+            'range': [2,7],
+            'initalSelected': [1,4]
           },
-          'Doors': {
+          '2': {
+            'name': 'Doors',
             'range': [2,5],
             'initalSelected': [0,2]
           },
-          'Engine size': {
-            'range': [0.8,1.0,1.4,1.6,1.8,2.0,2.2],
+          '3': {
+            'name': 'Engine size',
+            'customiseRange': [0.8,1.0,1.4,1.6,1.8,2.0,2.2],
             'initalSelected': [2,4]
           }
         }
