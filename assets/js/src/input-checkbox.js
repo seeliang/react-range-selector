@@ -11,7 +11,7 @@ class InputCheckbox extends React.Component {
   }
 
   render() {
-    let mainClass = 'range-selector__item-input',
+    const mainClass = 'range-selector__item-input',
       inputClass = mainClass + '-checkbox',
       labelClass = mainClass + '-text',
       linked = this.props.linked,
