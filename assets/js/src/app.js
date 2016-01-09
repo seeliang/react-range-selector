@@ -1,13 +1,16 @@
 import React from 'react';
 import {render} from 'react-dom';
 import RangeSelector from './index.js';
-import values from 'lodash/object/values';
 import options from './load-option.js';
+
 class RangeSelectorGroup extends React.Component{
   displayName: 'RangeSelectorGroup';
+  propTypes: {
+    selectors: React.PropTypes.array.isRequired,
+  }
   render(){
     let rangeSelectors=[],
-      selectors = values(options.selectors);
+      selectors = this.props.selectors;
     rangeSelectors = selectors.map(
       (selector,i) => {
         return (
@@ -29,5 +32,10 @@ class RangeSelectorGroup extends React.Component{
   }
 }
 
-render(
-  <RangeSelectorGroup/>, document.getElementById(options.DOMid));
+options.forEach(
+  option => {
+    render (
+      React.createFactory(RangeSelectorGroup)(option), document.getElementById(option.DOMid)
+    );
+  }
+);
