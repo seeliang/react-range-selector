@@ -49,32 +49,50 @@
     <form >
       <fieldset>
         <div id="range-selector"></div>
-        <input type="submit" class="search-form__submit" value="search">
+        <b class="range-selector__item-title">State</b>
+        <select name="select">
+          <option value="nsw" selected>NSW</option>
+          <option value="vic" >Vic</option>
+          <option value="act">Act</option>
+        </select>
+        <div id="range-selector-2"></div>
+        <input type="submit" class="search-form__submit" value="submit">
       </fieldset>
     </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.5/react.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.5/react-dom.min.js"></script>
     <script>
-      window.rangeSelector = {
-        'DOMid': 'range-selector',
-        'selectors': [
-          {
-            'name': 'Seats',
-            'range': [2,7],
-            'initalSelected': [1,4]
-          },
-          {
-            'name': 'Doors',
-            'range': [2,5],
-            'initalSelected': [0,2]
-          },
-          {
-            'name': 'Engine size',
-            'customiseRange': [0.8,1.0,1.4,1.6,1.8,2.0,2.2],
-            'initalSelected': [2,4]
-          }
-        ]
-      }
+      window.rangeSelector = [
+        {
+          'DOMid': 'range-selector',
+          'selectors': [
+            {
+              'name': 'Seats',
+              'range': [2,7],
+            },
+            {
+              'name': 'Doors',
+              'range': [2,5],
+              'initalSelected': [0,2]
+            },
+            {
+              'name': 'Engine size',
+              'customiseRange': [0.8,1.0,1.4,1.6,1.8,2.0,2.2],
+              'initalSelected': [2,4]
+            }
+          ]
+        },
+        {
+          'DOMid': 'range-selector-2',
+          'selectors': [
+            {
+              'name': 'Price',
+              'customiseRange': ['10k','15k','20k','25k','30k+'],
+              'initalSelected': [2,3]
+            }
+          ]
+        }
+      ];
 
     </script>
     <script src="https://cdn.rawgit.com/seeliang/react-range-selector/master/build/js/react-range-selector.js"></script>
