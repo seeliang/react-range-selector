@@ -9,4 +9,7 @@ the [html5 input range](https://www.w3.org/wiki/HTML/Elements/input/range) only 
 * support customize range
 * standalong react [plugin](https://cdn.rawgit.com/seeliang/react-range-selector/master/build/js/react-range-selector.js) with options set for your quick prototype, [check the Demo](http://seeliang.github.io/react-range-selector/)
 
+## Special thanks
+* [Jacob Bass](http://jacobbass.net/resume/) -- amazing guy :)
+
 [![Analytics](https://ga-beacon.appspot.com/UA-71361289-1/two-points/read-me)](https://github.com/igrigorik/ga-beacon)
