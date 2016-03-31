@@ -36,13 +36,17 @@
   "author": "sihui / me@sihuiliang.com",
   "license": "ISC",
   "dependencies": {
+    "codecov": "^1.0.1",
     "lodash": "^3.10.1",
     "react": "^0.14.2",
     "react-dom": "^0.14.2"
   },
   "babel": {
-   "presets": ["es2015", "react"]
- },
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
   "bugs": {
     "url": "https://github.com/seeliang/react-range-selector"
   },
@@ -51,7 +55,7 @@
       "<rootDir>/node_modules/react",
       "<rootDir>/node_modules/react-dom",
       "<rootDir>/node_modules/react-addons-test-utils"
-     ]
+    ]
   },
   "homepage": "https://github.com/seeliang/react-range-selector"
 }
