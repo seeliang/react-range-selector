@@ -23,7 +23,7 @@
     "webpack-dev-server": "^1.11.0"
   },
   "scripts": {
-    "test": "istanbul cover jest",
+    "test": "jest --coverage",
     "lint": "./node_modules/.bin/eslint assets/js",
     "start": "node node_modules/.bin/webpack-dev-server --content-base"
   },
