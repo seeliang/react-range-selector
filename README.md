@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/seeliang/react-range-selector.svg?branch=master)](https://travis-ci.org/seeliang/react-range-selector)
+[![codecov.io](https://codecov.io/github/seeliang/react-range-selector/coverage.svg?branch=master)](https://codecov.io/github/seeliang/react-range-selector?branch=master)
+
 # React two points range selector
 the [html5 input range](https://www.w3.org/wiki/HTML/Elements/input/range) only supports one point, and it's not easy to use for mobile. this npm pack is an alternative solution with input checkbox  
 [Demo](http://seeliang.github.io/react-range-selector/)
