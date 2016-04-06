@@ -19,6 +19,7 @@
     "jest-cli": "*",
     "node-libs-browser": "^0.5.2",
     "react-addons-test-utils": "~0.14.0",
+    "sl-fe-lint": "^1.0.0",
     "webpack": "^1.9.8",
     "webpack-dev-server": "^1.11.0"
   },
