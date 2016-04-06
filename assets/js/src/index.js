@@ -36,10 +36,13 @@ class RangeSelector extends React.Component{
     } else {
       newlySelected = this.addNewNumber(newlySelected,number);
     }
+    /*eslint-disable*/
+    // need to use setState for form https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-set-state.md
 
     this.setState({
       selected: newlySelected
     });
+    /*eslint-enable*/
   }
 
   isInSelected(number) {
