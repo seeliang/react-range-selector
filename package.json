@@ -15,15 +15,19 @@
     "babel-preset-react": "*",
     "eslint": "^1.7.1",
     "eslint-plugin-react": "^3.5.1",
+    "gulp": "^3.9.1",
     "istanbul": "^0.4.2",
     "jest-cli": "*",
     "node-libs-browser": "^0.5.2",
     "react-addons-test-utils": "~0.14.0",
+    "sl-fe-lint": "^1.0.0",
+    "sl-gt-synclint": "^1.0.0",
     "webpack": "^1.9.8",
     "webpack-dev-server": "^1.11.0"
   },
   "scripts": {
     "test": "npm run lint && jest --coverage",
+    "synclint": "gulp synclint --path sl-fe-lint",
     "lint": "./node_modules/.bin/eslint assets/js",
     "start": "node node_modules/.bin/webpack-dev-server --content-base"
   },

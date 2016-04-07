@@ -4,19 +4,24 @@
       2,
       2
     ],
+
     "quotes": [
       2,
       "single"
     ],
+    
     "linebreak-style": [
       2,
       "unix"
     ],
+
     "no-trailing-spaces": 2,
+
     "semi": [
       2,
       "always"
     ],
+
     "react/display-name": 1,
     "react/forbid-prop-types": 1,
     "react/jsx-boolean-value": 1,
@@ -44,6 +49,7 @@
     "react/sort-comp": 1,
     "react/wrap-multilines": 1
   },
+
   "ecmaFeatures":{
     "jsx":true,
     "modules":true
