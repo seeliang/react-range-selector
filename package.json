@@ -19,7 +19,7 @@
     "istanbul": "^0.4.2",
     "jest-cli": "*",
     "node-libs-browser": "^0.5.2",
-    "react-addons-test-utils": "~0.14.0",
+    "react-addons-test-utils": "^15.4.2",
     "sl-fe-lint": "^1.0.0",
     "sl-gt-synclint": "^1.0.0",
     "webpack": "^1.9.8",
@@ -43,8 +43,8 @@
   "dependencies": {
     "codecov": "^1.0.1",
     "lodash": "^3.10.1",
-    "react": "^0.14.2",
-    "react-dom": "^0.14.2"
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "babel": {
     "presets": [
