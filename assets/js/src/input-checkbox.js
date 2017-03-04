@@ -1,4 +1,5 @@
 import React from 'react';
+import render from 'react-dom';
 class InputCheckbox extends React.Component {
   displayName: 'InputCheckbox';
   constructor(props) {
