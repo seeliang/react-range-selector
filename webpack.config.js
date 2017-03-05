@@ -8,8 +8,8 @@ module.exports = {
   },
 
   externals: {
-      'React': 'react',
-      'render': 'react-dom'
+    'react': 'React',
+    'react-dom': 'ReactDOM'
   },
 
   module: {
@@ -26,7 +26,9 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({ output: {comments: false}})
+    new webpack.optimize.UglifyJsPlugin({
+      comments: false
+    })
   ],
 
   resolve: {
