@@ -2,7 +2,6 @@ import React from 'react';
 import Checkbox from './input-checkbox.js';
 import sortBy from 'lodash/sortBy';
 import takeRight from 'lodash/takeRight';
-import render from 'react-dom';
 class RangeSelector extends React.Component{
   displayName: 'RangeSelector';
   propTypes: {
