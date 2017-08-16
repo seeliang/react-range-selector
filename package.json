@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/seeliang/react-redux-router/issues"
   },
-  "homepage": "https://github.com/seeliang/react-redux-router#readme"
+  "homepage": "https://github.com/seeliang/react-redux-router#readme",
+  "devDependencies": {
+    "yarn": "^0.27.5"
+  }
 }
