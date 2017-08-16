@@ -1,0 +1,24 @@
+{
+  "name": "react-redux-router",
+  "version": "0.0.1",
+  "description": "react redux router demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seeliang/react-redux-router.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "router"
+  ],
+  "author": "sihui liang me@sihuiliang.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seeliang/react-redux-router/issues"
+  },
+  "homepage": "https://github.com/seeliang/react-redux-router#readme"
+}
