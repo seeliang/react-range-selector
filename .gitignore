@@ -1,1 +1,4 @@
+.eslintrc
+.sass-lint.yml
+.scss-lint.yml
 node_modules
