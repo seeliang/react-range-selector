@@ -4,6 +4,7 @@
   "description": "react redux router demo",
   "main": "index.js",
   "scripts": {
+    "lint-sync": "gulp synclint-copy --path sl-fe-lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +23,12 @@
   },
   "homepage": "https://github.com/seeliang/react-redux-router#readme",
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "sl-fe-lint": "^1.4.0",
+    "sl-gt-synclint": "^1.1.1",
     "yarn": "^0.27.5"
+  },
+  "dependencies": {
+    "eslint": "^4.4.1"
   }
 }
