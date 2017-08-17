@@ -4,6 +4,8 @@
   "description": "react redux router demo",
   "main": "index.js",
   "scripts": {
+    "js-lint": "./node_modules/.bin/eslint src/js",
+    "lint-sync": "gulp synclint-copy --path sl-fe-lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +24,13 @@
   },
   "homepage": "https://github.com/seeliang/react-redux-router#readme",
   "devDependencies": {
-    "yarn": "^0.27.5"
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.4.1",
+    "eslint-plugin-react": "^7.2.1",
+    "gulp": "^3.9.1",
+    "sl-fe-lint": "^2.0.1",
+    "sl-gt-synclint": "^1.1.1",
+    "yarn": "^0.27.5",
+    "babel-preset-react": "^6.24.1"
   }
 }

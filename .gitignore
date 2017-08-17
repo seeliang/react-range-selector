@@ -1,1 +1,5 @@
+.eslintrc
+.sass-lint.yml
+.scss-lint.yml
 node_modules
+npm-debug.log
