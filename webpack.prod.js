@@ -7,6 +7,7 @@
 const webpack = require('webpack'),
   base = require('./webpack.base.js'),
   prod = {
+    devtool: 'nosources-source-map',
     plugins: [
       new webpack.optimize.UglifyJsPlugin({
         output: {
