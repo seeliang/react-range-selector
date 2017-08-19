@@ -5,6 +5,12 @@ this is a demo of how react redux router could be implemented
 
 ----------
 
+## Env 
+* node 6.11.2
+* npm 3.10.10
+
+----------
+
 ## linter 
 * [eslint](https://www.npmjs.com/package/eslint)
 * [sass lint](https://www.npmjs.com/package/sass-lint)
@@ -21,3 +27,10 @@ this is a demo of how react redux router could be implemented
 To start 
  `npm run start`
 check render at http://localhost:8080/
+
+
+----------
+
+## Publish 
+
+npm run publish
