@@ -1,10 +1,11 @@
 const clean = require('gulp-clean'),
   gulp = require('gulp'),
   paths = {
+    src: './src',
     dist: './dist'
   },
-  replace = require('gulp-replace');
-
+  replace = require('gulp-replace'),
+  webpack = require('webpack-stream');
 
 require('sl-gt-synclint')(gulp);
 
@@ -18,3 +19,9 @@ gulp.task('clean',() => {
   return gulp.src(paths.dist)
   .pipe(clean());
 })
+
+gulp.task('webpack',() => {
+  return gulp.src(paths.src + '/js/app.js')
+    .pipe(webpack(require('./webpack.config.js')))
+    .pipe(gulp.dest(paths.dist));
+});
