@@ -7,7 +7,7 @@
     "js-lint": "./node_modules/.bin/eslint src/js",
     "lint-sync": "gulp synclint-copy --path sl-fe-lint",
     "publish": "NODE_ENV=prod node node_modules/.bin/gulp publish",
-    "start": "NODE_ENV=dev node node_modules/.bin/webpack-dev-server --inline --hot",
+    "start": "NODE_ENV=dev node node_modules/.bin/webpack-dev-server --inline --hot -d",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

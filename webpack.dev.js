@@ -1,10 +1,4 @@
-/* 
-  by using react devtool, you may not need source mapping
-*/
 const webpack = require('webpack'),
-  base = require('./webpack.base.js'),
-  dev = {
-    devtool: 'eval'
-  };
+  base = require('./webpack.base.js');
 
-module.exports = Object.assign(base, dev);
+module.exports = base;
