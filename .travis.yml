@@ -8,4 +8,8 @@ cache:
 notifications:
   email:
     - sway.liang@gmail.com
-script: npm run publish
+script: 
+  - npm run publish
+  - npm run start
+  - npm run lint-sync
+  - npm run js-lint
