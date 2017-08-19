@@ -1,8 +1,10 @@
-/* TODO: could use Commons Chunk in build config
-  CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
+/* 
+  by using react devtool, you may not need source mapping
 */
 const webpack = require('webpack'),
   base = require('./webpack.base.js'),
-  dev = {};
+  dev = {
+    devtool: 'eval'
+  };
 
 module.exports = Object.assign(base, dev);
