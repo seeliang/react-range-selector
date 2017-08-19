@@ -1,9 +1,9 @@
 const clean = require('gulp-clean'),
   gulp = require('gulp'),
   paths = {
-    src: './src',
-    dist: './dist',
-    package: './node_modules'
+    src: './src/',
+    dist: './dist/',
+    package: './node_modules/'
   },
   replace = require('gulp-replace'),
   sequence = require('run-sequence'),
@@ -24,16 +24,16 @@ gulp.task('clean',() => {
 
 gulp.task('vendor', () => {
   return gulp.src([
-    paths.package + '/react/dist/react.min.js',
-    paths.package + '/react-dom/dist/react-dom.min.js',
+    paths.package + 'react/dist/react.min.js',
+    paths.package + 'react-dom/dist/react-dom.min.js',
     ])
-    .pipe(gulp.dest(paths.dist + '/js/vendor/'))
+    .pipe(gulp.dest(paths.dist + 'js/vendor/'))
 });
 
 gulp.task('webpack',() => {
-  return gulp.src(paths.src + '/js/app.js')
+  return gulp.src(paths.src + 'js/app.js')
     .pipe(webpack(require('./webpack.config.js')))
-    .pipe(gulp.dest(paths.dist + '/js/'));
+    .pipe(gulp.dest(paths.dist + 'js/'));
 });
 
 gulp.task('publish', () => {
