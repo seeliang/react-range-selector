@@ -27,3 +27,10 @@ this is a demo of how react redux router could be implemented
 To start 
  `npm run start`
 check render at http://localhost:8080/
+
+
+----------
+
+## Publish 
+
+npm run publish
