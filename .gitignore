@@ -1,5 +1,6 @@
 .eslintrc
 .sass-lint.yml
 .scss-lint.yml
+dist
 node_modules
 npm-debug.log
