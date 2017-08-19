@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/seeliang/react-redux-router-.svg?branch=develop)](https://travis-ci.org/seeliang/react-redux-router)
+
 React-redux-router demo
 ===================
 
