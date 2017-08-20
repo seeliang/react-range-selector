@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom';
 import React from 'react';
 
 class Index extends React.Component {
-  displayName: 'Cast';
+  displayName: 'Index';
   constructor(props) {
     super(props);
   }
@@ -10,7 +10,7 @@ class Index extends React.Component {
     return (
       <div>
         <h1> Hello, i am the homepage</h1>
-        <Link to={`/page/`}>
+        <Link to={'/pages/'}>
           Go to page
         </Link>
       </div>
