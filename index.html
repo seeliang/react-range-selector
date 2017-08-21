@@ -13,14 +13,18 @@
   <body>
     <div id="app">
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/4.1.2/react-router-dom.min.js"></script>
     <script>
         if (typeof React === 'undefined') {
             document.write('<script src="http://localhost:8080/dist/js/vendor/react.min.js">\x3C/script>');
         }
         if (typeof ReactDOM === 'undefined') {
             document.write('<script src="http://localhost:8080/dist/js/vendor/react-dom.min.js">\x3C/script>');
+        }
+        if (typeof ReactRouterDOM === 'undefined') {
+            document.write('<script src="http://localhost:8080/dist/js/vendor/react-router-dom.min.js">\x3C/script>');
         }
     </script>
     <script src="http://localhost:8080/dist/js/app-bundle.js"></script>

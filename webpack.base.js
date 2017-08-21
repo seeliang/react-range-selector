@@ -11,13 +11,14 @@ module.exports = {
   externals: {
     'react': 'React',
     'react-dom': 'ReactDOM',
+    'react-router-dom': 'ReactRouterDOM'
   },
 
   module: {
     rules: [{
       test: /\.jsx?$/, // A regexp to test the require path. accepts either js or jsx
       loader: 'babel-loader'
-    }],
+    }]
   },
 
   output: {
@@ -25,7 +26,7 @@ module.exports = {
     publicPath:'dist/js',
     filename: '[name]-bundle.js'
   },
- 
+
   resolve: {
     modules: [
       'node_modules'

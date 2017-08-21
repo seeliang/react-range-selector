@@ -15,19 +15,20 @@ gulp.task('html', () => {
   return gulp.src('./index.html')
     .pipe(replace('http://localhost:8080/dist/',''))
     .pipe(gulp.dest(paths.dist));
-})
+});
 
 gulp.task('clean',() => {
   return gulp.src(paths.dist)
-  .pipe(clean());
-})
+    .pipe(clean());
+});
 
 gulp.task('vendor', () => {
   return gulp.src([
     paths.package + 'react/dist/react.min.js',
     paths.package + 'react-dom/dist/react-dom.min.js',
-    ])
-    .pipe(gulp.dest(paths.dist + 'js/vendor/'))
+    paths.package + 'react-router-dom/umd/react-router-dom.min.js'
+  ])
+    .pipe(gulp.dest(paths.dist + 'js/vendor/'));
 });
 
 gulp.task('webpack',() => {
