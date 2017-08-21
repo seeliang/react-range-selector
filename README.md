@@ -1,7 +1,15 @@
+[![Build Status](https://travis-ci.org/seeliang/react-redux-router.svg?branch=develop)](https://travis-ci.org/seeliang/react-redux-router)
+
 React-redux-router demo
 ===================
 
 this is a demo of how react redux router could be implemented 
+
+----------
+
+## Env 
+* node 6.11.2
+* npm 3.10.10
 
 ----------
 
@@ -21,3 +29,10 @@ this is a demo of how react redux router could be implemented
 To start 
  `npm run start`
 check render at http://localhost:8080/
+
+
+----------
+
+## Publish 
+
+npm run publish

@@ -1,49 +1,20 @@
 const webpack = require('webpack'),
-  path =  require('path');
+  dev = require('./webpack.dev.js'),
+  prod = require('./webpack.prod.js');
+let config;
+console.log('\n' + 'OK, we will load config for ' + process.env.NODE_ENV + '\n'); 
 
-/* TODO build config
-  CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
-*/
+if(process.env.NODE_ENV === 'prod') {
+  config = prod;
+}
 
-module.exports = {
-  devtool: 'eval',
-  devServer: {
-    historyApiFallback: true
-  },
+if(process.env.NODE_ENV === 'dev') {
+  config = dev;
+}
 
-  entry: {
-    app: './src/js/app.js'
-  },
+if(typeof(config) !== 'object') {
+  console.log('\n' + 'Oh my, we missing NODE_ENV set, that is bad' + '\n'); 
+  return;
+}
 
-  externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-  },
-
-  module: {
-    rules: [{
-      test: /\.jsx?$/, // A regexp to test the require path. accepts either js or jsx
-      loader: 'babel-loader'
-    }],
-  },
-
-  output: {
-    path: (path.join(__dirname,'/dist/js')),
-    publicPath:'dist/js',
-    filename: '[name]-bundle.js'
-  },
-/* TODO: build config.js
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      output: {
-        comments: false
-      }
-    })
-  ],
-*/
-  resolve: {
-    modules: [
-      'node_modules'
-    ]
-  }
-};
+module.exports = config;
