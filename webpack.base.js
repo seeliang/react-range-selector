@@ -10,7 +10,7 @@ module.exports = {
 
   externals: {
     'react': 'React',
-    'react-dom': 'ReactDOM',
+    'react-dom': 'ReactDOM'
   },
 
   module: {
@@ -23,9 +23,9 @@ module.exports = {
   output: {
     path: (path.join(__dirname,'/dist/js')),
     publicPath:'dist/js',
-    filename: '[name]-bundle.js'
+    filename: '[name].js'
   },
- 
+
   resolve: {
     modules: [
       'node_modules'
