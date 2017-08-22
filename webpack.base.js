@@ -1,9 +1,5 @@
 const path =  require('path');
 module.exports = {
-  devServer: {
-    historyApiFallback: true
-  },
-
   entry: {
     app: './src/js/app.js'
   },
