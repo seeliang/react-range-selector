@@ -1,9 +1,5 @@
 const path =  require('path');
 module.exports = {
-  devServer: {
-    historyApiFallback: true
-  },
-
   entry: {
     app: './src/js/app.js'
   },
@@ -11,21 +7,22 @@ module.exports = {
   externals: {
     'react': 'React',
     'react-dom': 'ReactDOM',
+    'react-router-dom': 'ReactRouterDOM'
   },
 
   module: {
     rules: [{
       test: /\.jsx?$/, // A regexp to test the require path. accepts either js or jsx
       loader: 'babel-loader'
-    }],
+    }]
   },
 
   output: {
     path: (path.join(__dirname,'/dist/js')),
     publicPath:'dist/js',
-    filename: '[name]-bundle.js'
+    filename: '[name].js'
   },
- 
+
   resolve: {
     modules: [
       'node_modules'

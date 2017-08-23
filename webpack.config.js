@@ -1,7 +1,7 @@
-const webpack = require('webpack'),
-  dev = require('./webpack.dev.js'),
+const dev = require('./webpack.dev.js'),
   prod = require('./webpack.prod.js');
 let config;
+
 console.log('\n' + 'OK, we will load config for ' + process.env.NODE_ENV + '\n'); 
 
 if(process.env.NODE_ENV === 'prod') {
