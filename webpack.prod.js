@@ -15,6 +15,6 @@ const webpack = require('webpack'),
         }
       })
     ]
-};
+  };
 
 module.exports = Object.assign(base, prod);
