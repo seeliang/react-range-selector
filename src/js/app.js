@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-import Routes from './routes';
+import Redux from './redux';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <Routes/>
+      <Redux/>
     );
   }
 }
