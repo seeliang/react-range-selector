@@ -13,7 +13,7 @@ module.exports = {
     rules: [{
       test: /\.jsx?$/, // A regexp to test the require path. accepts either js or jsx
       loader: 'babel-loader'
-    }],
+    }]
   },
 
   output: {
