@@ -27,7 +27,8 @@ gulp.task('clean',() => {
 gulp.task('vendor:publish', () => {
   return gulp.src([
     paths.package + 'react/dist/react.min.js',
-    paths.package + 'react-dom/dist/react-dom.min.js'
+    paths.package + 'react-dom/dist/react-dom.min.js',
+    paths.package + 'react-router-dom/umd/react-router-dom.min.js'
   ])
     .pipe(gulp.dest(paths.dist + 'js/vendor/'));
 });
@@ -35,7 +36,8 @@ gulp.task('vendor:publish', () => {
 gulp.task('vendor:dev', () => {
   return gulp.src([
     paths.package + 'react/dist/react.js',
-    paths.package + 'react-dom/dist/react-dom.js'
+    paths.package + 'react-dom/dist/react-dom.js',
+    paths.package + 'react-router-dom/umd/react-router-dom.js'
   ])
     .pipe(gulp.dest(paths.dist + 'js/vendor/'));
 });
