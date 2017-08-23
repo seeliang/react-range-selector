@@ -1,9 +1,5 @@
 const path =  require('path');
 module.exports = {
-  devServer: {
-    historyApiFallback: true
-  },
-
   entry: {
     app: './src/js/app.js'
   },
@@ -24,7 +20,7 @@ module.exports = {
   output: {
     path: (path.join(__dirname,'/dist/js')),
     publicPath:'dist/js',
-    filename: '[name]-bundle.js'
+    filename: '[name].js'
   },
 
   resolve: {

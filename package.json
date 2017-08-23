@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "js-lint": "./node_modules/.bin/eslint src/js",
-    "lint-sync": "gulp synclint-copy --path sl-fe-lint",
+    "lint-sync": "./node_modules/.bin/gulp synclint-copy --path sl-fe-lint",
     "publish": "NODE_ENV=prod node node_modules/.bin/gulp publish",
-    "start": "NODE_ENV=dev node node_modules/.bin/webpack-dev-server --inline --hot -d",
+    "start": "./node_modules/.bin/gulp vendor:dev & NODE_ENV=dev node node_modules/.bin/webpack-dev-server --hot --inline -d",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -36,6 +36,7 @@
     "eslint-plugin-react": "^7.2.1",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
+    "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.6.1",
     "run-sequence": "^2.1.0",
     "sl-fe-lint": "^2.0.1",
