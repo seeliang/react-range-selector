@@ -3,6 +3,7 @@ import axios from 'axios';
 export function feedFetch(url, dispatch = dispatch) {
   return (dispatch) => {
     dispatch({type:'FETCHING'});
+    dispatch({type:'UPDATE API TARGET', content: url});
     axios.get('http://swapi.co/api/' + url)
       .then((response) => {
         dispatch({type: 'UPDATE API FETCHED', content: url});
@@ -11,6 +12,5 @@ export function feedFetch(url, dispatch = dispatch) {
       .catch((err) => {
         dispatch({type: 'ERROR', content: err});
       });
-    dispatch({type:'UPDATE API TARGET', content: url});
   };
 }
