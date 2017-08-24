@@ -16,9 +16,7 @@ class Routes extends React.Component {
       this.props.feedFetch('people');
     }
   }
-  componentWillReceiveProps() {
-    console.log(this.props.feed);
-  }
+
   render() {
     return (
       <Router>
@@ -30,7 +28,8 @@ class Routes extends React.Component {
             ) : (
               <Loading/>
             )
-            )}/>
+            )}
+          />
           <Route
             component={Page}
             path="/page"
