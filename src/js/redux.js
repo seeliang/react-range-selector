@@ -9,8 +9,7 @@ import {Provider,connect} from 'react-redux';
 
 function mapStateTOProps() {
   return {
-    feed: store.getState().feed,
-    images: store.getState().images
+    feed: store.getState().feed
   };
 }
 
