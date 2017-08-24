@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { HashRouter as Router, Route} from 'react-router-dom';
+import { HashRouter as Router, Route, Redirect} from 'react-router-dom';
 
-import Index from '../atomic/pages/index';
+import Loading from '../atomic/pages/loading';
 import Page from '../atomic/pages/page';
 
 class Routes extends React.Component {
@@ -10,18 +10,30 @@ class Routes extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  componentWillMount () {
+    if(this.props.feed.fetched === false) {
+      this.props.feedFetch('people');
+    }
+  }
+  componentWillReceiveProps() {
+    console.log(this.props.feed);
+  }
   render() {
     return (
       <Router>
         <div>
-          <Route
-            component={Index}
-            exact
+          <Route exact
             path="/"
-          />
+            render={() => (this.props.feed.fetched ? (
+              <Redirect to="/page"/>
+            ) : (
+              <Loading/>
+            )
+            )}/>
           <Route
             component={Page}
-            path="/pages"
+            path="/page"
           />
         </div>
       </Router>
