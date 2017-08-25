@@ -7,7 +7,8 @@ module.exports = {
   externals: {
     'react': 'React',
     'react-dom': 'ReactDOM',
-    'react-router-dom': 'ReactRouterDOM'
+    'react-router-dom': 'ReactRouterDOM',
+    'redux': 'Redux'
   },
 
   module: {
