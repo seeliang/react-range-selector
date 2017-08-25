@@ -26,6 +26,7 @@ gulp.task('clean',() => {
 
 gulp.task('vendor:publish', () => {
   return gulp.src([
+    paths.package + 'axios/dist/axios.min.js',
     paths.package + 'react/dist/react.min.js',
     paths.package + 'react-dom/dist/react-dom.min.js',
     paths.package + 'react-router-dom/umd/react-router-dom.min.js',
@@ -36,6 +37,7 @@ gulp.task('vendor:publish', () => {
 
 gulp.task('vendor:dev', () => {
   return gulp.src([
+    paths.package + 'axios/dist/axios.js',
     paths.package + 'react/dist/react.js',
     paths.package + 'react-dom/dist/react-dom.js',
     paths.package + 'react-router-dom/umd/react-router-dom.js',

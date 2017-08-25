@@ -5,6 +5,7 @@ module.exports = {
   },
 
   externals: {
+    'axios': 'axios',
     'react': 'React',
     'react-dom': 'ReactDOM',
     'react-router-dom': 'ReactRouterDOM',
