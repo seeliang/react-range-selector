@@ -26,18 +26,24 @@ gulp.task('clean',() => {
 
 gulp.task('vendor:publish', () => {
   return gulp.src([
+    paths.package + 'axios/dist/axios.min.js', // TODO: simplify this 
     paths.package + 'react/dist/react.min.js',
     paths.package + 'react-dom/dist/react-dom.min.js',
-    paths.package + 'react-router-dom/umd/react-router-dom.min.js'
+    paths.package + 'react-redux/dist/react-redux.min.js',
+    paths.package + 'react-router-dom/umd/react-router-dom.min.js',
+    paths.package + 'redux/dist/redux.min.js'
   ])
     .pipe(gulp.dest(paths.dist + 'js/vendor/'));
 });
 
 gulp.task('vendor:dev', () => {
   return gulp.src([
+    paths.package + 'axios/dist/axios.js',
     paths.package + 'react/dist/react.js',
     paths.package + 'react-dom/dist/react-dom.js',
-    paths.package + 'react-router-dom/umd/react-router-dom.js'
+    paths.package + 'react-redux/dist/react-redux.js',
+    paths.package + 'react-router-dom/umd/react-router-dom.js',
+    paths.package + 'redux/dist/redux.js'
   ])
     .pipe(gulp.dest(paths.dist + 'js/vendor/'));
 });
