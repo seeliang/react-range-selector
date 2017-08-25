@@ -11,6 +11,7 @@ module.exports = {
     'react-dom': 'ReactDOM',
     'react-router-dom': 'ReactRouterDOM',
     'redux': 'Redux'
+    //NOTE: redux thunk is tiny
   },
 
   module: {
