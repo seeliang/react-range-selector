@@ -31,9 +31,16 @@ class Routes extends React.Component {
             )}
           />
           <Route
-            feedFetch={this.props.feedFetch}
             path="/page"
-            render={()=> <Page feed={this.props.feed} />}
+            render={() => {
+              return (
+                <Page
+                  feed={this.props.feed}
+                  feedFetch={this.props.feedFetch}
+                />
+              );
+            }
+            }
           />
         </div>
       </Router>
