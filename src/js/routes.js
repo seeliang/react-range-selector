@@ -19,29 +19,30 @@ class Routes extends React.Component {
   }
 
   render() {
+    if(this.props.feed.fetched === false) {
+      return (
+        <Loading feed={this.props.feed}
+          feedFetch={this.props.feedFetch}
+        />);
+    }
+
     return (
       <Router>
         <div>
           <Route exact
             path="/"
-            render={() => (this.props.feed.fetched ? (
+            render={() => (
               <Redirect to="/page"/>
-            ) : (
-              <Loading/>
-            )
             )}
           />
           <Route
             path="/page"
-            render={() => {
-              return (
-                <Page
-                  feed={this.props.feed}
-                  feedFetch={this.props.feedFetch}
-                />
-              );
-            }
-            }
+            render={() => (
+              <Page
+                feed={this.props.feed}
+                feedFetch={this.props.feedFetch}
+              />
+            )}
           />
           <Route
             path="/people/:id"

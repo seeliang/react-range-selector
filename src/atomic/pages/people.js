@@ -18,33 +18,10 @@ class People extends React.Component {
     );
   }
 
-  screen() {
-    if(typeof this.props.feed.fetchError === 'boolean' && this.props.feed.fetchError === true) {
-      return (
-        <div>
-          <h1> oh~ no, we have some issue from server side </h1>
-          <Button action={this.reload}
-            name="Try it again"
-          />
-        </div>
-      );
-    }
-
-    if(this.props.feed.fetched === false || this.props.feed.feed.results.length < 1) {
-      return <Loading />;
-    }
-
-    return (
-      <div>
-        {this.lists()}
-      </div>
-    );
-  }
-
   render() {
     return (
       <div>
-        {this.screen()}
+        {this.lists()}
       </div>
     );
   }
