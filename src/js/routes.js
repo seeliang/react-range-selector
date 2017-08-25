@@ -4,6 +4,7 @@ import { HashRouter as Router, Route, Redirect} from 'react-router-dom';
 
 import Loading from '../atomic/pages/loading';
 import Page from '../atomic/pages/page';
+import People from '../atomic/pages/people';
 
 class Routes extends React.Component {
   displayName: 'Routes';
@@ -41,6 +42,15 @@ class Routes extends React.Component {
               );
             }
             }
+          />
+          <Route
+            path="/people/:id"
+            render={(props) => (
+              <People
+                feed={this.props.feed}
+                {...props}
+              />
+            )}
           />
         </div>
       </Router>
