@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Routes from './routes.js';
-
 import * as actions from './actions';
 import store from './store';
 import {bindActionCreators} from 'redux';
@@ -17,10 +15,14 @@ function mapDispachToProps(dispatch) {
   return bindActionCreators(actions,dispatch);
 }
 
-const ReduxMain = connect(mapStateTOProps,mapDispachToProps)(Routes);
-
 class Redux extends React.Component {
+  displayName: 'Redux';
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    const ReduxMain = connect(mapStateTOProps,mapDispachToProps)(this.props.content);
     return (
       <Provider store={store}>
         <ReduxMain/>
