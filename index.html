@@ -16,16 +16,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/4.1.2/react-router-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-redux/5.0.6/react-redux.js"></script>
     <script>
+        if (typeof axios === 'undefined') {
+            document.write('<script src="http://localhost:8080/dist/js/vendor/axios.js">\x3C/script>');
+        }
         if (typeof React === 'undefined') {
             document.write('<script src="http://localhost:8080/dist/js/vendor/react.js">\x3C/script>');
         }
         if (typeof ReactDOM === 'undefined') {
             document.write('<script src="http://localhost:8080/dist/js/vendor/react-dom.js">\x3C/script>');
         }
+        if (typeof ReactRedux === 'undefined') {
+            document.write('<script src="http://localhost:8080/dist/js/vendor/react-redux.js">\x3C/script>');
+        }
         if (typeof ReactRouterDOM === 'undefined') {
             document.write('<script src="http://localhost:8080/dist/js/vendor/react-router-dom.js">\x3C/script>');
         }
+        if (typeof Redux === 'undefined') {
+            document.write('<script src="http://localhost:8080/dist/js/vendor/redux.js">\x3C/script>');
+        }
+
     </script>
     <script src="http://localhost:8080/dist/js/app.js"></script>
     </body>

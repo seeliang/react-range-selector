@@ -1,27 +1,20 @@
 import React from 'react';
 import {render} from 'react-dom';
-import Index from '../atomic/pages/index';
-import Page from '../atomic/pages/page';
-import { HashRouter as Router, Route} from 'react-router-dom';
 
-class Root extends React.Component {
+import Redux from './redux';
+import Routes from './routes';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
-      <Router>
-        <div>
-          <Route
-            component={Index}
-            exact
-            path="/"
-          />
-          <Route
-            component={Page}
-            path="/pages"
-          />
-        </div>
-      </Router>
+      <Redux
+        content={Routes}
+      />
     );
   }
 }
 
-render(<Root/>, document.getElementById('app'));
+render(<App/>, document.getElementById('app'));
