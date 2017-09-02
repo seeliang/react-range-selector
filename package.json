@@ -4,11 +4,11 @@
   "description": "react redux router demo",
   "main": "index.js",
   "scripts": {
-    "js-lint": "./node_modules/.bin/eslint src/js",
+    "js-lint": "./node_modules/.bin/eslint src/js --ignore-pattern __test__",
     "lint-sync": "./node_modules/.bin/gulp synclint-copy --path sl-fe-lint",
     "publish": "NODE_ENV=prod node node_modules/.bin/gulp publish",
     "start": "./node_modules/.bin/gulp vendor:dev & NODE_ENV=dev node node_modules/.bin/webpack-dev-server --hot --inline -d",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node node_modules/.bin/jest"
   },
   "repository": {
     "type": "git",
@@ -38,6 +38,8 @@
     "gulp-clean": "^0.3.2",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.6.1",
+    "jest": "^20.0.4",
+    "react-test-renderer": "^15.6.1",
     "run-sequence": "^2.1.0",
     "sl-fe-lint": "^2.0.1",
     "sl-gt-synclint": "^1.1.1",
