@@ -9,6 +9,7 @@ notifications:
   email:
     - sway.liang@gmail.com
 script: 
+  - npm run test
   - npm run lint-sync
   - npm run js-lint
   - npm run publish
