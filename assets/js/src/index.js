@@ -2,7 +2,7 @@ import React from 'react';
 import Checkbox from './input-checkbox.js';
 import sortBy from 'lodash/sortBy';
 import takeRight from 'lodash/takeRight';
-class RangeSelector extends React.Component{
+class RangeSelector extends React.Component {
   displayName: 'RangeSelector';
   propTypes: {
     name: React.PropTypes.string.isRequired,
@@ -65,7 +65,7 @@ class RangeSelector extends React.Component{
       startClass = 'is-start';
     let start = this.state.selected[0],
       end = this.state.selected[1];
-    if (this.isInSelected(number)){
+    if (this.isInSelected(number)) {
       if (number === start) {
         return startClass + ' ' + inRangeClass;
       } else if (number === end) {
@@ -77,12 +77,12 @@ class RangeSelector extends React.Component{
   }
 
   render() {
-    let inputList=[],
+    let inputList = [],
       selected,
       checkboxName,
       stateClassSet,
       i ,
-      rangelist=[],
+      rangelist = [],
       rangeStart,
       rangeEnd;
 

@@ -3,13 +3,13 @@ import {render} from 'react-dom';
 import RangeSelector from './index.js';
 import options from './load-option.js';
 
-class RangeSelectorGroup extends React.Component{
+class RangeSelectorGroup extends React.Component {
   displayName: 'RangeSelectorGroup';
   propTypes: {
-    selectors: React.PropTypes.array.isRequired,
+    selectors: React.PropTypes.array.isRequired
   }
-  render(){
-    let rangeSelectors=[],
+  render() {
+    let rangeSelectors = [],
       selectors = this.props.selectors;
     rangeSelectors = selectors.map(
       (selector,i) => {
