@@ -5,3 +5,8 @@ coverage
 *.scssc
 
 *.log
+
+.sass-lint.yml
+
+.eslintrc
+
