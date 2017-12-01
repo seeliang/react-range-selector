@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="range-selector__item-input is-in-range"
+>
+  <input
+    checked={undefined}
+    className="range-selector__item-input-checkbox"
+    id={undefined}
+    onChange={[Function]}
+    type="checkbox"
+    value={undefined}
+  />
+  <label
+    className="range-selector__item-input-text"
+    htmlFor={undefined}
+  />
+</div>
+`;

@@ -18,8 +18,9 @@
     "eslint-plugin-react": "^6.10.0",
     "gulp": "^3.9.1",
     "istanbul": "^0.4.2",
+    "jest": "^21.2.1",
     "jest-cli": "*",
-    "react-addons-test-utils": "^15.4.2",
+    "react-test-renderer": "^16.2.0",
     "sl-fe-lint": "^1.0.0",
     "sl-gt-synclint": "^1.0.0",
     "webpack": "^2.2.1",
@@ -56,13 +57,6 @@
   },
   "bugs": {
     "url": "https://github.com/seeliang/react-range-selector"
-  },
-  "jest": {
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react",
-      "<rootDir>/node_modules/react-dom",
-      "<rootDir>/node_modules/react-addons-test-utils"
-    ]
   },
   "homepage": "https://github.com/seeliang/react-range-selector"
 }
