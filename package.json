@@ -42,8 +42,8 @@
   "dependencies": {
     "codecov": "^1.0.1",
     "lodash": "^4.17.4",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "babel": {
     "presets": [
