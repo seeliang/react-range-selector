@@ -27,8 +27,9 @@
     "webpack-dev-server": "^2.4.1"
   },
   "scripts": {
-    "test": "npm run lint && jest --coverage",
-    "synclint": "yarn add sl-fe-lint && gulp synclint-copy --path sl-fe-lint",
+    "copylint": "gulp synclint-copy --path sl-fe-lint",
+    "test": "npm run copylint && npm run lint && jest --coverage",
+    "synclint": "yarn add sl-fe-lint && yarn copylint",
     "lint": "./node_modules/.bin/eslint assets/js",
     "start": "node node_modules/.bin/webpack-dev-server --content-base"
   },
