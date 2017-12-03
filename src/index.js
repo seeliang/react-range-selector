@@ -1,5 +1,5 @@
 import React from 'react';
-import Checkbox from '../../../src/molecules/checkbox';
+import Checkbox from './molecules/checkbox';
 import sortBy from 'lodash/sortBy';
 import takeRight from 'lodash/takeRight';
 class RangeSelector extends React.Component {
