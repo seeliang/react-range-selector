@@ -4,6 +4,14 @@ class InputCheckbox extends React.Component {
   constructor(props) {
     super(props);
     this.onChange = this.onChange.bind(this);
+    this.state = {
+      className: {
+        active: '',
+        input: this.main + '-checkbox',
+        label: this.main + '-text',
+        main: 'range-selector__item-input'
+      }
+    };
   }
 
   onChange() {
@@ -11,23 +19,20 @@ class InputCheckbox extends React.Component {
   }
 
   render() {
-    const mainClass = 'range-selector__item-input',
-      inputClass = mainClass + '-checkbox',
-      labelClass = mainClass + '-text',
-      linked = this.props.linked,
-      activeClass = mainClass + ' ' + this.props.stateClass;
+    const linked = this.props.linked,
+      activeClass = this.state.className.main + ' ' + this.props.stateClass;
     return (
       <div className={activeClass}>
         <input
             checked={this.props.isSelected}
-            className={inputClass}
+            className={this.state.className.state}
             id={linked}
             onChange={this.onChange}
             type={'checkbox'}
             value={linked}
         />
         <label
-            className={labelClass}
+            className={this.state.className.label}
             htmlFor={linked}
         >
           {this.props.labelContent}
