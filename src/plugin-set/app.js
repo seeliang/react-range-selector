@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import RangeSelector from './index.js';
+import RangeSelector from '../index';
 import options from './load-option.js';
 
 class RangeSelectorGroup extends React.Component {

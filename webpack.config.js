@@ -1,10 +1,10 @@
 const webpack = require('webpack'),
   path =  require('path'),
   CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
-
+  // TODO: build set
 module.exports = {
   entry: {
-    app: './assets/js/src/app.js',
+    app: './src/plugin-set/app.js'
   },
 
   externals: {
@@ -16,7 +16,7 @@ module.exports = {
     rules: [{
       test: /\.jsx?$/, // A regexp to test the require path. accepts either js or jsx
       loader: 'babel-loader'
-      }],
+      }]
   },
 
   output: {
