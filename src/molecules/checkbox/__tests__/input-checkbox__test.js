@@ -6,7 +6,14 @@ import React from 'react';
 
 it('renders correctly', () => {
   const tree = renderer.create(
-    <Checkbox stateClass={'is-in-range'} />
+    <Checkbox
+    inputChecked={() =>{console.log(1)}}
+    isSelected={true}
+    key={2}
+    labelContent={'3'}
+    linked={'checkboxName'}
+    stateClass={'is-in-range'}
+    />
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });
