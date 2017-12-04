@@ -9,7 +9,7 @@ class InputCheckbox extends React.Component {
     this.onChange = this.onChange.bind(this);
     this.state = {
       className: {
-        active: mainClass + ' ' + stateClass,
+        mainRender: mainClass + ' ' + stateClass,
         input: mainClass + '-checkbox',
         label: mainClass + '-text',
         main: mainClass
@@ -24,7 +24,7 @@ class InputCheckbox extends React.Component {
 
   render() {
     return (
-      <div className={this.state.className.active}>
+      <div className={this.state.className.mainRender}>
         <input
             checked={this.props.isSelected}
             className={this.state.className.state}
