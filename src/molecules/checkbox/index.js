@@ -27,7 +27,7 @@ class InputCheckbox extends React.Component {
       <div className={this.state.className.mainRender}>
         <input
             checked={this.props.isSelected}
-            className={this.state.className.state}
+            className={this.state.className.input}
             id={this.props.linked}
             onChange={this.onChange}
             type={'checkbox'}
