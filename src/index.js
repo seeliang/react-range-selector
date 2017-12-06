@@ -26,7 +26,7 @@ class RangeSelector extends React.Component {
     return sortBy(takeRight(array, 2));
   }
 
-  createList () {
+  createList() {
     let inputList = [],
       rangeList = [],
       rangeStart,
@@ -44,7 +44,7 @@ class RangeSelector extends React.Component {
 
     inputList = rangeList.map(
       (number,i) => {
-        let checkboxName = this.props.componentName + '_' +
+        const checkboxName = this.props.componentName + '_' +
           this.props.name.replace(/\s/g, '-').toLowerCase() + '-' + i,
           selected = this.isInSelected(i),
           stateClassSet = this.stateClasslist(i);
@@ -64,20 +64,20 @@ class RangeSelector extends React.Component {
   }
 
   updateSelected(number) {
-    let newlySelected = this.state.selected.slice();
-    if (newlySelected.length === 1 && newlySelected[0] === number) {
-      newlySelected = [];
-    } else if (newlySelected.length === 2) {
-      newlySelected = [];
-      newlySelected = this.addNewNumber(newlySelected,number);
-    } else {
-      newlySelected = this.addNewNumber(newlySelected,number);
-    }
     /*eslint-disable*/
     // need to use setState for form https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-set-state.md
 
-    this.setState({
-      selected: newlySelected
+    this.setState((prev) => {
+      let newlySelected = prev.selected.slice();
+      if (newlySelected.length === 1 && newlySelected[0] === number) {
+        newlySelected = [];
+      } else if (newlySelected.length === 2) {
+        newlySelected = [];
+        newlySelected = this.addNewNumber(newlySelected,number);
+      } else {
+        newlySelected = this.addNewNumber(newlySelected,number);
+      }
+      return {selected: newlySelected};
     });
     /*eslint-enable*/
   }
