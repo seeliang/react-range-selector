@@ -26,6 +26,43 @@ class RangeSelector extends React.Component {
     return sortBy(takeRight(array, 2));
   }
 
+  createList () {
+    let inputList = [],
+      rangeList = [],
+      rangeStart,
+      rangeEnd;
+
+    if (this.props.range) {
+      rangeStart = this.props.range[0],
+      rangeEnd = this.props.range[1];
+      for (let i = rangeStart; i <= rangeEnd; i++ ) {
+        rangeList.push(i);
+      }
+    } else {
+      rangeList = this.props.customiseRange;
+    }
+
+    inputList = rangeList.map(
+      (number,i) => {
+        let checkboxName = this.props.componentName + '_' +
+          this.props.name.replace(/\s/g, '-').toLowerCase() + '-' + i,
+          selected = this.isInSelected(i),
+          stateClassSet = this.stateClasslist(i);
+        return (
+          <Checkbox
+              inputChecked={this.updateSelected}
+              isSelected={selected}
+              key={i}
+              labelContent={number}
+              linked={checkboxName}
+              stateClass={stateClassSet}
+              value={i}
+          />
+        );
+      },this);
+    return inputList;
+  }
+
   updateSelected(number) {
     let newlySelected = this.state.selected.slice();
     if (newlySelected.length === 1 && newlySelected[0] === number) {
@@ -77,10 +114,7 @@ class RangeSelector extends React.Component {
   }
 
   render() {
-    let inputList = [],
-      rangeList = [],
-      rangeStart,
-      rangeEnd;
+    let inputList = [];
 
     if (this.props.range && this.props.customiseRange) {
       return (<h1>Please use range or customiseRange, not both</h1>);
@@ -88,34 +122,7 @@ class RangeSelector extends React.Component {
       return (<h1>Please set range or customiseRange</h1>);
     }
 
-    if (this.props.range) {
-      rangeStart = this.props.range[0],
-      rangeEnd = this.props.range[1];
-      for (let i = rangeStart; i <= rangeEnd; i++ ) {
-        rangeList.push(i);
-      }
-    } else {
-      rangeList = this.props.customiseRange;
-    }
-
-    inputList = rangeList.map(
-      (number,i) => {
-        let checkboxName = this.props.componentName + '_' +
-          this.props.name.replace(/\s/g, '-').toLowerCase() + '-' + i,
-          selected = this.isInSelected(i),
-          stateClassSet = this.stateClasslist(i);
-        return (
-          <Checkbox
-              inputChecked={this.updateSelected}
-              isSelected={selected}
-              key={i}
-              labelContent={number}
-              linked={checkboxName}
-              stateClass={stateClassSet}
-              value={i}
-          />
-        );
-      },this);
+    inputList = this.createList();
 
     return (
       <div className={'range-selector__item'}>
