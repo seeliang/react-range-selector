@@ -1,0 +1,421 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`both coustomiseRange and range 1`] = `
+<h1>
+  Please use range or customiseRange, not both
+</h1>
+`;
+
+exports[`not coustomiseRange or range 1`] = `
+<h1>
+  Please set range or customiseRange
+</h1>
+`;
+
+exports[`renders customise 1`] = `
+<div
+  className="range-selector__item"
+>
+  <b
+    className="range-selector__item-title"
+  >
+    car
+  </b>
+  <div
+    className="range-selector__item-input "
+  >
+    <input
+      checked={false}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-0"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-0"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-0"
+    >
+      0.8
+    </label>
+  </div>
+  <div
+    className="range-selector__item-input "
+  >
+    <input
+      checked={false}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-1"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-1"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-1"
+    >
+      1
+    </label>
+  </div>
+  <div
+    className="range-selector__item-input "
+  >
+    <input
+      checked={false}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-2"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-2"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-2"
+    >
+      1.4
+    </label>
+  </div>
+  <div
+    className="range-selector__item-input "
+  >
+    <input
+      checked={false}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-3"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-3"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-3"
+    >
+      1.6
+    </label>
+  </div>
+  <div
+    className="range-selector__item-input "
+  >
+    <input
+      checked={false}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-4"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-4"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-4"
+    >
+      1.8
+    </label>
+  </div>
+  <div
+    className="range-selector__item-input "
+  >
+    <input
+      checked={false}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-5"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-5"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-5"
+    >
+      2
+    </label>
+  </div>
+  <div
+    className="range-selector__item-input "
+  >
+    <input
+      checked={false}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-6"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-6"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-6"
+    >
+      2.2
+    </label>
+  </div>
+</div>
+`;
+
+exports[`renders inital & customise 1`] = `
+<div
+  className="range-selector__item"
+>
+  <b
+    className="range-selector__item-title"
+  >
+    car
+  </b>
+  <div
+    className="range-selector__item-input is-start is-in-range"
+  >
+    <input
+      checked={true}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-0"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-0"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-0"
+    >
+      0.8
+    </label>
+  </div>
+  <div
+    className="range-selector__item-input is-in-range"
+  >
+    <input
+      checked={true}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-1"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-1"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-1"
+    >
+      1
+    </label>
+  </div>
+  <div
+    className="range-selector__item-input is-end is-in-range"
+  >
+    <input
+      checked={true}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-2"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-2"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-2"
+    >
+      1.4
+    </label>
+  </div>
+  <div
+    className="range-selector__item-input "
+  >
+    <input
+      checked={false}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-3"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-3"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-3"
+    >
+      1.6
+    </label>
+  </div>
+  <div
+    className="range-selector__item-input "
+  >
+    <input
+      checked={false}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-4"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-4"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-4"
+    >
+      1.8
+    </label>
+  </div>
+  <div
+    className="range-selector__item-input "
+  >
+    <input
+      checked={false}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-5"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-5"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-5"
+    >
+      2
+    </label>
+  </div>
+  <div
+    className="range-selector__item-input "
+  >
+    <input
+      checked={false}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-6"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-6"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-6"
+    >
+      2.2
+    </label>
+  </div>
+</div>
+`;
+
+exports[`renders inital & range 1`] = `
+<div
+  className="range-selector__item"
+>
+  <b
+    className="range-selector__item-title"
+  >
+    car
+  </b>
+  <div
+    className="range-selector__item-input is-start is-in-range"
+  >
+    <input
+      checked={true}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-0"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-0"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-0"
+    >
+      3
+    </label>
+  </div>
+  <div
+    className="range-selector__item-input is-in-range"
+  >
+    <input
+      checked={true}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-1"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-1"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-1"
+    >
+      4
+    </label>
+  </div>
+  <div
+    className="range-selector__item-input is-end is-in-range"
+  >
+    <input
+      checked={true}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-2"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-2"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-2"
+    >
+      5
+    </label>
+  </div>
+</div>
+`;
+
+exports[`renders range 1`] = `
+<div
+  className="range-selector__item"
+>
+  <b
+    className="range-selector__item-title"
+  >
+    car
+  </b>
+  <div
+    className="range-selector__item-input "
+  >
+    <input
+      checked={false}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-0"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-0"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-0"
+    >
+      3
+    </label>
+  </div>
+  <div
+    className="range-selector__item-input "
+  >
+    <input
+      checked={false}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-1"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-1"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-1"
+    >
+      4
+    </label>
+  </div>
+  <div
+    className="range-selector__item-input "
+  >
+    <input
+      checked={false}
+      className="range-selector__item-input-checkbox"
+      id="range-selector_car-2"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-2"
+    />
+    <label
+      className="range-selector__item-input-text"
+      htmlFor="range-selector_car-2"
+    >
+      5
+    </label>
+  </div>
+</div>
+`;
