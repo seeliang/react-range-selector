@@ -78,11 +78,7 @@ class RangeSelector extends React.Component {
 
   render() {
     let inputList = [],
-      selected,
-      checkboxName,
-      stateClassSet,
-      i ,
-      rangelist = [],
+      rangeList = [],
       rangeStart,
       rangeEnd;
 
@@ -95,20 +91,19 @@ class RangeSelector extends React.Component {
     if (this.props.range) {
       rangeStart = this.props.range[0],
       rangeEnd = this.props.range[1];
-      for (i = rangeStart; i <= rangeEnd; i++ ) {
-        rangelist.push(i);
+      for (let i = rangeStart; i <= rangeEnd; i++ ) {
+        rangeList.push(i);
       }
     } else {
-      rangelist = this.props.customiseRange;
+      rangeList = this.props.customiseRange;
     }
 
-    inputList = rangelist.map(
+    inputList = rangeList.map(
       (number,i) => {
-        checkboxName = this.props.componentName + '_' +
-          this.props.name.replace(/\s/g, '-').toLowerCase() + '-' + i;
-        selected = this.isInSelected(i);
-        stateClassSet = this.stateClasslist(i);
-
+        let checkboxName = this.props.componentName + '_' +
+          this.props.name.replace(/\s/g, '-').toLowerCase() + '-' + i,
+          selected = this.isInSelected(i),
+          stateClassSet = this.stateClasslist(i);
         return (
           <Checkbox
               inputChecked={this.updateSelected}
