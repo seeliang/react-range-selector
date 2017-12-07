@@ -32,7 +32,7 @@ class RangeSelector extends React.Component {
       rangeStart,
       rangeEnd;
 
-    if (this.props.range) {
+    if (this.props.range !== undefined) {
       rangeStart = this.props.range[0],
       rangeEnd = this.props.range[1];
       for (let i = rangeStart; i <= rangeEnd; i++ ) {
@@ -85,7 +85,7 @@ class RangeSelector extends React.Component {
   isInSelected(number) {
     let start = this.state.selected[0],
       end = this.state.selected[1];
-    if(!end) {
+    if(end === undefined) {
       if (number === start) {
         return true;
       }
