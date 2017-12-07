@@ -15,7 +15,7 @@ class RangeSelector extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: props.initalSelected ? props.initalSelected : []
+      selected: Array.isArray(props.initalSelected) ? props.initalSelected : []
     };
 
     this.updateSelected = this.updateSelected.bind(this);
