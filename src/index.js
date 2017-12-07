@@ -63,21 +63,26 @@ class RangeSelector extends React.Component {
     return inputList;
   }
 
+  newlySelected (selected, number) {
+    let newlySelected = selected.slice();
+    if (newlySelected.length === 1 && newlySelected[0] === number) {
+      newlySelected = [];
+    } else if (newlySelected.length === 2) {
+      newlySelected = [];
+      newlySelected = this.addNewNumber(newlySelected,number);
+    } else {
+      newlySelected = this.addNewNumber(newlySelected,number);
+    }
+    return newlySelected;
+  }
+
   updateSelected(number) {
     /*eslint-disable*/
     // need to use setState for form https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-set-state.md
 
     this.setState((prev) => {
-      let newlySelected = prev.selected.slice();
-      if (newlySelected.length === 1 && newlySelected[0] === number) {
-        newlySelected = [];
-      } else if (newlySelected.length === 2) {
-        newlySelected = [];
-        newlySelected = this.addNewNumber(newlySelected,number);
-      } else {
-        newlySelected = this.addNewNumber(newlySelected,number);
-      }
-      return {selected: newlySelected};
+      let justSelected = this.newlySelected(prev.selected,number);
+      return {selected: justSelected};
     });
     /*eslint-enable*/
   }
