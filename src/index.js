@@ -116,9 +116,11 @@ class RangeSelector extends React.Component {
   render() {
     let inputList = [];
 
-    if (this.props.range && this.props.customiseRange) {
+    if (Array.isArray(this.props.range)  &&
+    Array.isArray(this.props.customiseRange)) {
       return (<h1>Please use range or customiseRange, not both</h1>);
-    } else if (!this.props.range && !this.props.customiseRange) {
+    } else if (Array.isArray(this.props.range) === false  &&
+    Array.isArray(this.props.customiseRange) === false) {
       return (<h1>Please set range or customiseRange</h1>);
     }
 
