@@ -15,7 +15,7 @@ class RangeSelector extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: props.initalSelected ? props.initalSelected : []
+      selected: Array.isArray(props.initalSelected) ? props.initalSelected : []
     };
 
     this.updateSelected = this.updateSelected.bind(this);
@@ -26,8 +26,45 @@ class RangeSelector extends React.Component {
     return sortBy(takeRight(array, 2));
   }
 
-  updateSelected(number) {
-    let newlySelected = this.state.selected.slice();
+  createList() {
+    let inputList = [],
+      rangeList = [],
+      rangeStart,
+      rangeEnd;
+
+    if (this.props.range !== undefined) {
+      rangeStart = this.props.range[0],
+      rangeEnd = this.props.range[1];
+      for (let i = rangeStart; i <= rangeEnd; i++ ) {
+        rangeList.push(i);
+      }
+    } else {
+      rangeList = this.props.customiseRange;
+    }
+
+    inputList = rangeList.map(
+      (number,i) => {
+        const checkboxName = this.props.componentName + '_' +
+          this.props.name.replace(/\s/g, '-').toLowerCase() + '-' + i,
+          selected = this.isInSelected(i),
+          stateClassSet = this.stateClasslist(i);
+        return (
+          <Checkbox
+              inputChecked={this.updateSelected}
+              isSelected={selected}
+              key={i}
+              labelContent={number}
+              linked={checkboxName}
+              stateClass={stateClassSet}
+              value={i}
+          />
+        );
+      },this);
+    return inputList;
+  }
+
+  newlySelected (selected, number) {
+    let newlySelected = selected.slice();
     if (newlySelected.length === 1 && newlySelected[0] === number) {
       newlySelected = [];
     } else if (newlySelected.length === 2) {
@@ -36,27 +73,39 @@ class RangeSelector extends React.Component {
     } else {
       newlySelected = this.addNewNumber(newlySelected,number);
     }
+    return newlySelected;
+  }
+
+  updateSelected(number) {
     /*eslint-disable*/
     // need to use setState for form https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-set-state.md
 
-    this.setState({
-      selected: newlySelected
+    this.setState((prev) => {
+      let justSelected = this.newlySelected(prev.selected,number);
+      return {selected: justSelected};
     });
     /*eslint-enable*/
   }
 
   isInSelected(number) {
-    let start = this.state.selected[0],
-      end = this.state.selected[1];
-    if(!end) {
+    let start, end;
+    if(this.state.selected.length < 1) {
+      return false;
+    }
+
+    if(this.state.selected.length === 1) {
       if (number === start) {
         return true;
       }
-    } else {
-      if (number >= start && number <= end) {
-        return true;
-      }
     }
+
+    start = this.state.selected[0],
+    end = this.state.selected[1];
+
+    if (number >= start && number <= end) {
+      return true;
+    }
+
     return false;
   }
 
@@ -77,50 +126,17 @@ class RangeSelector extends React.Component {
   }
 
   render() {
-    let inputList = [],
-      selected,
-      checkboxName,
-      stateClassSet,
-      i ,
-      rangelist = [],
-      rangeStart,
-      rangeEnd;
+    let inputList = [];
 
-    if (this.props.range && this.props.customiseRange) {
+    if (Array.isArray(this.props.range)  &&
+    Array.isArray(this.props.customiseRange)) {
       return (<h1>Please use range or customiseRange, not both</h1>);
-    } else if (!this.props.range && !this.props.customiseRange) {
+    } else if (Array.isArray(this.props.range) === false  &&
+    Array.isArray(this.props.customiseRange) === false) {
       return (<h1>Please set range or customiseRange</h1>);
     }
 
-    if (this.props.range) {
-      rangeStart = this.props.range[0],
-      rangeEnd = this.props.range[1];
-      for (i = rangeStart; i <= rangeEnd; i++ ) {
-        rangelist.push(i);
-      }
-    } else {
-      rangelist = this.props.customiseRange;
-    }
-
-    inputList = rangelist.map(
-      (number,i) => {
-        checkboxName = this.props.componentName + '_' +
-          this.props.name.replace(/\s/g, '-').toLowerCase() + '-' + i;
-        selected = this.isInSelected(i);
-        stateClassSet = this.stateClasslist(i);
-
-        return (
-          <Checkbox
-              inputChecked={this.updateSelected}
-              isSelected={selected}
-              key={i}
-              labelContent={number}
-              linked={checkboxName}
-              stateClass={stateClassSet}
-              value={i}
-          />
-        );
-      },this);
+    inputList = this.createList();
 
     return (
       <div className={'range-selector__item'}>
