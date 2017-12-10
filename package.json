@@ -25,7 +25,7 @@
     "react-test-renderer": "^16.2.0",
     "sl-fe-lint": "^2.0.1",
     "sl-gt-synclint": "^1.0.0",
-    "webpack": "^2.2.1",
+    "webpack": "^3.10.0",
     "webpack-dev-server": "^2.4.1"
   },
   "scripts": {
