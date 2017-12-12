@@ -9,11 +9,34 @@ the [html5 input range](https://www.w3.org/wiki/HTML/Elements/input/range) only 
 [Demo](http://seeliang.github.io/react-range-selector/)
 
 ## Features
-* based on [BEM](https://css-tricks.com/bem-101/)
-* has "is-start " class, "in-range" and "is-end" class for special styling set
-* support initial selected range
-* support customize range
-* standalong react [plugin](https://cdn.rawgit.com/seeliang/react-range-selector/master/build/js/react-range-selector.js) with options set for your quick prototype, [check the Demo](http://seeliang.github.io/react-range-selector/)
+ * based on [BEM](https://css-tricks.com/bem-101/)
+ * has "is-start " class, "in-range" and "is-end" class for special styling set
+ * support initial selected range
+ * support customize range
+ * standalong react [plugin](https://cdn.rawgit.com/seeliang/react-range-selector/master/build/js/react-range-selector.js) with options set for your quick prototype, [check the Demo](http://seeliang.github.io/react-range-selector/)
+ 
+## Release
+### 1.0.1
+#### Refactor:
+
+ * Main
+ * checkbox
+ * folder structure
+#### Test:
+ * Enzyme test in main
+ * snapshot update
+
+#### Chore: 
+ * update React to 16
+ * dev dependencies update
+ * replace deprecated dependency 
+ * eslint rule update
+
+#### Docs:
+* dependency badge
+* download badge
+
+[details](https://trello.com/b/TbKcN5vL/range-selector)
 
 ## Special thanks
 * [Jacob Bass](http://jacobbass.net/resume/) -- amazing guy :)
