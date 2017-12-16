@@ -2,7 +2,7 @@
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import RangeSelector from '../index';
-import {shallow, mount} from 'enzyme';
+import {shallow} from 'enzyme';
 import React from 'react';
 
 Enzyme.configure({ adapter: new Adapter() });
