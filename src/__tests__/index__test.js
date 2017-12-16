@@ -4,6 +4,12 @@ import RangeSelector from '../index';
 import renderer from 'react-test-renderer';
 import React from 'react';
 
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import {shallow} from 'enzyme';
+
+Enzyme.configure({ adapter: new Adapter() });
+
 
 it('both coustomiseRange and range', () => {
   const tree = renderer.create(
@@ -74,4 +80,26 @@ it('renders inital & customise', () => {
   />
   ).toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+it('one point select render check', () => {
+  const tree = shallow(<RangeSelector componentName={'range-selector'}
+    initalSelected={[4]}
+    key={3}
+    name={'car'}
+    range={[3,5]}
+  />);
+  expect(tree.instance().isInSelected(4)).toEqual(true);
+});
+
+it('two points select render check', () => {
+  const tree = shallow(<RangeSelector componentName={'range-selector'}
+    initalSelected={[2,4]}
+    key={3}
+    name={'car'}
+    range={[3,7]}
+  />);
+  expect(tree.instance().isInSelected(4)).toEqual(true);
+  expect(tree.instance().isInSelected(3)).toEqual(true);
+  expect(tree.instance().isInSelected(2)).toEqual(true);
 });
