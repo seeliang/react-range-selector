@@ -2,6 +2,7 @@ import React from 'react';
 import Checkbox from './molecules/checkbox';
 import sortBy from 'lodash/sortBy';
 import takeRight from 'lodash/takeRight';
+
 class RangeSelector extends React.Component {
   displayName: 'RangeSelector';
   propTypes: {
@@ -77,11 +78,15 @@ class RangeSelector extends React.Component {
   }
 
   updateSelected(number) {
+    const clickSelected = this.newlySelected(this.state.selected,number);
+    if (typeof this.props.rangeUpdate === 'function') {
+      this.props.rangeUpdate(clickSelected, this.props.name);
+    }
     /*eslint-disable*/
     // need to use setState for form https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-set-state.md
 
     this.setState((prev) => {
-      let justSelected = this.newlySelected(prev.selected,number);
+      const justSelected = this.newlySelected(prev.selected,number);
       return {selected: justSelected};
     });
     /*eslint-enable*/
