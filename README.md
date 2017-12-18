@@ -16,6 +16,9 @@ the [html5 input range](https://www.w3.org/wiki/HTML/Elements/input/range) only 
  * standalong react [plugin](https://cdn.rawgit.com/seeliang/react-range-selector/master/build/js/react-range-selector.js) with options set for your quick prototype, [check the Demo](http://seeliang.github.io/react-range-selector/)
  
 ## Release
+### 1.1.0
+* add feature: pass state to parent component (rangeUpdate)
+
 ### 1.0.2
 * fix single selected not showing bug
 * add unit test for the bug
