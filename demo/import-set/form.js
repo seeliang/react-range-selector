@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import RangeSelector from '../index';
+import RangeSelector from '../../src/index';
 
 
 class Form extends React.Component {

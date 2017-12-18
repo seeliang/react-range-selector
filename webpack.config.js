@@ -4,8 +4,8 @@ const webpack = require('webpack'),
   // TODO: build set
 module.exports = {
   entry: {
-    'react-range-selector': './src/plugin-set/app.js', // todo: sort the filename
-    'form' : './src/import-set/form.js'
+    'react-range-selector': './demo/plugin-set/app.js', // todo: sort the filename
+    'form' : './demo/import-set/form.js'
   },
 
   externals: {
