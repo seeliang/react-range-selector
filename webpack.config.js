@@ -4,7 +4,8 @@ const webpack = require('webpack'),
   // TODO: build set
 module.exports = {
   entry: {
-    app: './src/plugin-set/app.js'
+    'react-range-selector': './src/plugin-set/app.js', // todo: sort the filename
+    'form' : './src/import-set/form.js'
   },
 
   externals: {
@@ -16,13 +17,13 @@ module.exports = {
     rules: [{
       test: /\.jsx?$/, // A regexp to test the require path. accepts either js or jsx
       loader: 'babel-loader'
-      }]
+    }]
   },
 
   output: {
     path: (path.join(__dirname,'/build/js')),
     publicPath:'build/js',
-    filename: 'react-range-selector.js'
+    filename: '[name].js'
   },
 
   plugins: [
