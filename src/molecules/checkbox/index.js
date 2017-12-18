@@ -26,16 +26,16 @@ class InputCheckbox extends React.Component {
     return (
       <div className={this.state.className.mainRender}>
         <input
-            checked={this.props.isSelected}
-            className={this.state.className.input}
-            id={this.props.linked}
-            onChange={this.onChange}
-            type={'checkbox'}
-            value={this.props.linked}
+          checked={this.props.isSelected}
+          className={this.state.className.input}
+          id={this.props.linked}
+          onChange={this.onChange}
+          type={'checkbox'}
+          value={this.props.linked}
         />
         <label
-            className={this.state.className.label}
-            htmlFor={this.props.linked}
+          className={this.state.className.label}
+          htmlFor={this.props.linked}
         >
           {this.props.labelContent}
         </label>
