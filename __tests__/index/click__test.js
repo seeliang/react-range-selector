@@ -1,7 +1,7 @@
 /* eslint-disable */
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import RangeSelector from '../index';
+import RangeSelector from '../../src/index';
 import {shallow} from 'enzyme';
 import React from 'react';
 
