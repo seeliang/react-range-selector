@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import RangeSelector from '../index';
+import RangeSelector from '../../src/index';
 import renderer from 'react-test-renderer';
 import React from 'react';
 

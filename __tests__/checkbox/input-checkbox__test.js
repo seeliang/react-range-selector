@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import Checkbox from '../index';
+import Checkbox from '../../src/molecules/checkbox/index';
 import renderer from 'react-test-renderer';
 import React from 'react';
 

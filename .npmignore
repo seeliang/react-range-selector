@@ -3,3 +3,4 @@ coverage/
 webpack.*
 gulpfile.js
 codecov.yml
+__tests__/
