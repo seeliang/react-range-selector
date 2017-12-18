@@ -1,0 +1,5 @@
+demo/
+coverage/
+webpack.*
+gulpfile.js
+codecov.yml
