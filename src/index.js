@@ -51,13 +51,13 @@ class RangeSelector extends React.Component {
           stateClassSet = this.stateClasslist(i);
         return (
           <Checkbox
-              inputChecked={this.updateSelected}
-              isSelected={selected}
-              key={i}
-              labelContent={number}
-              linked={checkboxName}
-              stateClass={stateClassSet}
-              value={i}
+            inputChecked={this.updateSelected}
+            isSelected={selected}
+            key={i}
+            labelContent={number}
+            linked={checkboxName}
+            stateClass={stateClassSet}
+            value={i}
           />
         );
       },this);

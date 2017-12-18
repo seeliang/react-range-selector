@@ -29,8 +29,8 @@ class Form extends React.Component {
       <RangeSelector componentName={'range-selector'}
         initalSelected={this.state.sets.doors}
         name={'doors'}
-        rangeUpdate={this.rangeUpdate}
         range={[3,8]}
+        rangeUpdate={this.rangeUpdate}
       />
     );
   }

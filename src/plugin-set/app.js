@@ -15,11 +15,11 @@ class RangeSelectorGroup extends React.Component {
       (selector,i) => {
         return (
           <RangeSelector componentName={'range-selector'}
-              customiseRange={selector.customiseRange}
-              initalSelected={selector.initalSelected}
-              key={i}
-              name={selector.name}
-              range={selector.range}
+            customiseRange={selector.customiseRange}
+            initalSelected={selector.initalSelected}
+            key={i}
+            name={selector.name}
+            range={selector.range}
           />
         );
       }
