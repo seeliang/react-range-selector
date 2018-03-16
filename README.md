@@ -15,7 +15,15 @@ the [html5 input range](https://www.w3.org/wiki/HTML/Elements/input/range) only 
  * support customize range
  * standalong react [plugin](https://cdn.rawgit.com/seeliang/react-range-selector/master/build/js/react-range-selector.js) with options set for your quick prototype, [check the Demo](http://seeliang.github.io/react-range-selector/)
  
+
+## License
+
+MIT licensed
+
 ## Release
+
+### 1.1.2
+* MIT licensed
 
 ### 1.1.1
 * reduce package size: move test and demo code from build package
