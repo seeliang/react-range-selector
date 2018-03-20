@@ -22,7 +22,7 @@ MIT licensed
 
 ## Release
 
-### 1.1.2
+### 1.2.0
 * MIT licensed
 
 ### 1.1.1
