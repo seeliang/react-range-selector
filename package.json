@@ -30,7 +30,7 @@
   },
   "scripts": {
     "copylint": "yarn gulp synclint-copy --path sl-fe-lint",
-    "test": "yarn copylint && yarn lint && yarn est --coverage",
+    "test": "yarn copylint && yarn lint && yarn jest --coverage",
     "synclint": "yarn add sl-fe-lint && yarn copylint",
     "lint": "yarn eslint assets/js",
     "start": "yarn webpack-dev-server --content-base"
