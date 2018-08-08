@@ -29,11 +29,11 @@
     "webpack-dev-server": "^2.4.1"
   },
   "scripts": {
-    "copylint": "./node_modules/.bin/gulp synclint-copy --path sl-fe-lint",
-    "test": "npm run copylint && npm run lint && jest --coverage",
+    "copylint": "yarn gulp synclint-copy --path sl-fe-lint",
+    "test": "yarn copylint && yarn lint && yarn est --coverage",
     "synclint": "yarn add sl-fe-lint && yarn copylint",
-    "lint": "./node_modules/.bin/eslint assets/js",
-    "start": "node node_modules/.bin/webpack-dev-server --content-base"
+    "lint": "yarn eslint assets/js",
+    "start": "yarn webpack-dev-server --content-base"
   },
   "repository": {
     "type": "git",
