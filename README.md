@@ -2,7 +2,7 @@
 [![codecov.io](https://codecov.io/github/seeliang/react-range-selector/coverage.svg?branch=master)](https://codecov.io/github/seeliang/react-range-selector?branch=master)
 [![npm version](https://badge.fury.io/js/react-two-points-range-selector.svg)](https://badge.fury.io/js/react-two-points-range-selector)
 [![npm](https://img.shields.io/npm/dy/react-two-points-range-selector.svg)](https://npm-stat.com/charts.html?package=react-two-points-range-selector)
-![Dependencies](https://david-dm.org/seeliang/react-range-selector.svg)
+[![Dependencies](https://david-dm.org/seeliang/react-range-selector.svg)](https://david-dm.org/seeliang/react-range-selector)
 
 # React two points range selector
 the [html5 input range](https://www.w3.org/wiki/HTML/Elements/input/range) only supports one point, and it's not easy to use for mobile. this npm pack is an alternative solution with input checkbox  
