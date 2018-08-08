@@ -45,7 +45,7 @@
   "author": "sihui / me@sihuiliang.com",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.10",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
