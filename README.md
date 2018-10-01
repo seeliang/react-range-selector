@@ -21,6 +21,8 @@ the [html5 input range](https://www.w3.org/wiki/HTML/Elements/input/range) only 
 MIT licensed
 
 ## Release
+### 1.3.0
+* add package feature 
 
 ### 1.2.0
 * MIT licensed
