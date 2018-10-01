@@ -31,12 +31,11 @@
     "react": "16"
   },
   "scripts": {
-    "copylint": "gulp synclint-copy --path sl-fe-lint",
-    "test": "npm run copylint && npm run lint && jest --coverage",
+    "copylint": "yarn gulp synclint-copy --path sl-fe-lint",
+    "test": "yarn copylint && yarn lint && yarn jest --coverage",
     "synclint": "yarn add sl-fe-lint && yarn copylint",
-    "lint": "./node_modules/.bin/eslint assets/js",
-    "transpile": "babel src -d lib --copy-files",
-    "start": "node node_modules/.bin/webpack-dev-server --content-base"
+    "lint": "yarn eslint assets/js",
+    "start": "yarn webpack-dev-server --content-base"
   },
   "repository": {
     "type": "git",
@@ -48,7 +47,7 @@
   "author": "sihui / me@sihuiliang.com",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.10",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
