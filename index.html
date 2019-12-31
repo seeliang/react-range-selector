@@ -62,6 +62,23 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js"></script>
     <script>
+      window.onload = function() {
+        var form = document.querySelector("form");
+        form.onsubmit = submitted.bind(form);
+      }
+
+      function submitted(event) {
+        event.preventDefault();
+        var inputs = document.querySelectorAll('input');
+        var checked = [];
+        function getValue(input,index,obj) {
+          if(input.checked === true) {
+            checked.push(input.id)
+          }
+        }
+        inputs.forEach(getValue)
+        alert('checked boxes : \n' + checked);
+      }
       window.rangeSelector = [
         {
           'DOMid': 'range-selector',
