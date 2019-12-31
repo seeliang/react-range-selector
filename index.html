@@ -66,9 +66,20 @@
         var form = document.querySelector("form");
         form.onsubmit = submitted.bind(form);
       }
-
+      var mapping = {
+        seats: [2,7],
+        doors: [2,5],
+        engine: [0.8,1.0,1.4,1.6,1.8,2.0,2.2],
+        price: ['10k','15k','20k','25k','30k+']
+      }
       function submitted(event) {
         event.preventDefault();
+        var values = {
+          seats: [],
+          doors: [],
+          engine: [],
+          price: []
+        }
         var inputs = document.querySelectorAll('input');
         var checked = [];
         function getValue(input,index,obj) {
@@ -76,8 +87,24 @@
             checked.push(input.id)
           }
         }
-        inputs.forEach(getValue)
-        alert('checked boxes : \n' + checked);
+        function valueMapping (item, name, isRange) {
+          if(item.includes(name)){
+            var index = Number.parseInt(item.slice(-1));
+            if(isRange) {
+              values[name].push(index + mapping[name][0]);
+              return;
+            }
+            values[name].push(mapping[name][index]);
+          }
+        }
+        inputs.forEach(getValue);
+        checked.forEach( i => {
+          valueMapping(i,'engine');
+          valueMapping(i,'price');
+          valueMapping(i, 'doors', true);
+          valueMapping(i, 'seats', true);
+        })
+        alert('seats : ' + values.seats + '\n' + 'doors : ' + values.doors + '\n' + 'engine size : ' + values.engine + '\n' + 'price : ' + values.price + '\n');
       }
       window.rangeSelector = [
         {
@@ -85,16 +112,16 @@
           'selectors': [
             {
               'name': 'Seats',
-              'range': [2,7],
+              'range': mapping.seats,
             },
             {
               'name': 'Doors',
-              'range': [2,5],
+              'range': mapping.doors,
               'initalSelected': [0,2]
             },
             {
               'name': 'Engine size',
-              'customiseRange': [0.8,1.0,1.4,1.6,1.8,2.0,2.2],
+              'customiseRange': mapping.engine,
               'initalSelected': [2,4]
             }
           ]
@@ -104,7 +131,7 @@
           'selectors': [
             {
               'name': 'Price',
-              'customiseRange': ['10k','15k','20k','25k','30k+'],
+              'customiseRange': mapping.price,
               'initalSelected': [2,3]
             }
           ]
