@@ -44,7 +44,7 @@
   </head>
 
   <body>
-    <h1>React two points range select</h1>
+    <h1>React two points range select as a plugin</h1>
     <form >
       <fieldset>
         <div id="range-selector"></div>
@@ -61,16 +61,51 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js"></script>
     <script>
-      window.onload = function() {
-        var form = document.querySelector("form");
-        form.onsubmit = submitted.bind(form);
-      }
       var mapping = {
         seats: [2,7],
         doors: [2,5],
         engine: [0.8,1.0,1.4,1.6,1.8,2.0,2.2],
         price: ['10k','15k','20k','25k','30k+']
       }
+      window.rangeSelector = [
+        {
+          'DOMid': 'range-selector',
+          'selectors': [
+            {
+              'name': 'Seats',
+              'range': mapping.seats,
+            },
+            {
+              'name': 'Doors',
+              'range': mapping.doors,
+              'initalSelected': [0,2]
+            },
+            {
+              'name': 'Engine size',
+              'customiseRange': mapping.engine,
+              'initalSelected': [2,4]
+            }
+          ]
+        },
+        {
+          'DOMid': 'range-selector-2',
+          'selectors': [
+            {
+              'name': 'Price',
+              'customiseRange': mapping.price,
+              'initalSelected': [2,3]
+            }
+          ]
+        }
+      ];
+      // eof react selector config
+
+      // submit handle sample
+      window.onload = function() {
+        var form = document.querySelector("form");
+        form.onsubmit = submitted.bind(form);
+      }
+
       function submitted(event) {
         event.preventDefault();
         var values = {
@@ -105,37 +140,6 @@
         })
         alert('seats : ' + values.seats + '\n' + 'doors : ' + values.doors + '\n' + 'engine size : ' + values.engine + '\n' + 'price : ' + values.price + '\n');
       }
-      window.rangeSelector = [
-        {
-          'DOMid': 'range-selector',
-          'selectors': [
-            {
-              'name': 'Seats',
-              'range': mapping.seats,
-            },
-            {
-              'name': 'Doors',
-              'range': mapping.doors,
-              'initalSelected': [0,2]
-            },
-            {
-              'name': 'Engine size',
-              'customiseRange': mapping.engine,
-              'initalSelected': [2,4]
-            }
-          ]
-        },
-        {
-          'DOMid': 'range-selector-2',
-          'selectors': [
-            {
-              'name': 'Price',
-              'customiseRange': mapping.price,
-              'initalSelected': [2,3]
-            }
-          ]
-        }
-      ];
 
     </script>
     <script type="text/javascript">
