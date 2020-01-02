@@ -13,7 +13,7 @@
     <h2> React integration sample </h2>
     <div id="form"></div>
     <h2> React plugin sample </h2>
-    <form >
+    <form id="form-plugin">
       <fieldset>
         <div id="range-selector"></div>
         <b>State</b>
@@ -31,22 +31,29 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.production.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.production.min.js"></script>
     <script type="text/javascript">
+      
+      var mapping = {
+        seats: [2,7],
+        doors: [2,5],
+        engine: [0.8,1.0,1.4,1.6,1.8,2.0,2.2],
+        price: ['10k','15k','20k','25k','30k+']
+      }
       window.rangeSelector = [
         {
           'DOMid': 'range-selector',
           'selectors': [
             {
               'name': 'Seats',
-              'range': [2,7],
+              'range': mapping.seats,
             },
             {
               'name': 'Doors',
-              'range': [2,5],
+              'range': mapping.doors,
               'initalSelected': [0,2]
             },
             {
               'name': 'Engine size',
-              'customiseRange': [0.8,1.0,1.4,1.6,1.8,2.0,2.2],
+              'customiseRange': mapping.engine,
               'initalSelected': [2,4]
             }
           ]
@@ -56,12 +63,54 @@
           'selectors': [
             {
               'name': 'Price',
-              'customiseRange': ['10k','15k','20k','25k','30k+'],
+              'customiseRange': mapping.price,
               'initalSelected': [2,3]
             }
           ]
         }
       ];
+      // eof react selector config
+
+      // submit handle sample
+      window.onload = function() {
+        var form = document.getElementById('form-plugin');
+        form.onsubmit = submitted.bind(form);
+      }
+
+      function submitted(event) {
+        event.preventDefault();
+        var values = {
+          seats: [],
+          doors: [],
+          engine: [],
+          price: []
+        }
+        var inputs = document.querySelectorAll('input');
+        var checked = [];
+        function getValue(input,index,obj) {
+          if(input.checked === true) {
+            checked.push(input.id)
+          }
+        }
+        function valueMapping (item, name, isRange) {
+          if(item.includes(name)){
+            var index = Number.parseInt(item.slice(-1));
+            if(isRange) {
+              values[name].push(index + mapping[name][0]);
+              return;
+            }
+            values[name].push(mapping[name][index]);
+          }
+        }
+        inputs.forEach(getValue);
+        checked.forEach( i => {
+          valueMapping(i,'engine');
+          valueMapping(i,'price');
+          valueMapping(i, 'doors', true);
+          valueMapping(i, 'seats', true);
+        })
+        alert(JSON.stringify(values));
+      }
 
     </script>
     <script type="text/javascript">
