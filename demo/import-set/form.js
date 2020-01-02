@@ -16,7 +16,7 @@ class Form extends React.Component {
       frequency: [2.5,3.4,4.2,6.3]
     }
     this.state = {
-      index: {
+      indexRange: {
         cores: [3,5],
         frequency: [1,2]
       }
@@ -25,9 +25,9 @@ class Form extends React.Component {
 
   rangeUpdate(range,section) {
     this.setState((prev) => {
-      let newSet = prev.index;
+      let newSet = prev.indexRange;
       newSet[section] = range;
-      return {index: newSet};
+      return {indexRange: newSet};
     });
   }
   submit(e) {
@@ -40,13 +40,13 @@ class Form extends React.Component {
       <form >
       <fieldset>
       <RangeSelector componentName={'range-selector'}
-        initalSelected={this.state.index.cores}
+        initalSelected={this.state.indexRange.cores}
         name={'cores'}
         range={this.range.cores}
         rangeUpdate={(r,o) => this.rangeUpdate(r,o)}
       />
       <RangeSelector componentName={'range-selector'}
-        initalSelected={this.state.index.frequency}
+        initalSelected={this.state.indexRange.frequency}
         name={'frequency'}
         customiseRange={this.range.frequency}
         rangeUpdate={(r,o) => this.rangeUpdate(r,o)}
