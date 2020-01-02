@@ -117,8 +117,19 @@
     if(typeof(window.Promise) === 'undefined') {
       console.log('dude (or lass) you need polyfill')
     }
-  </script>
-  <script type="text/javascript" src="build/js/react-range-selector.js"></script>
-  <script type="text/javascript" src="build/js/form.js"></script>
+    let loading = new Promise(function(resolve, reject) {
+    	if(window.React && window.ReactDOM) {
+    		resolve('Success!');
+    	}
+    	else {
+    		reject('Failure!');
+    	}
+    });
+
+    loading.then(() => {
+      document.write('<script type="text/javascript" src="build/js/react-range-selector.js"><\/script>');
+      });
+    </script>
+    <script type="text/javascript" src="build/js/form.js"></script>
   </body>
 </html>
