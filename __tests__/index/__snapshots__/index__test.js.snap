@@ -1,17 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`both coustomiseRange and range 1`] = `
-<h1>
-  Please use range or customiseRange, not both
-</h1>
-`;
-
-exports[`not coustomiseRange or range 1`] = `
-<h1>
-  Please set range or customiseRange
-</h1>
-`;
-
 exports[`renders customise 1`] = `
 <div
   className="range-selector__item"

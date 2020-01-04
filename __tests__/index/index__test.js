@@ -6,13 +6,13 @@ import React from 'react';
 
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
 
 Enzyme.configure({ adapter: new Adapter() });
 
 
 it('both coustomiseRange and range', () => {
-  const tree = renderer.create(
+  expect(() => mount(
     <RangeSelector componentName={'range-selector'}
     customiseRange={[2,5]}
     initialSelected={[3,4]}
@@ -20,19 +20,15 @@ it('both coustomiseRange and range', () => {
     name={'car'}
     range={[3,5]}
   />
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
+  )).toThrow();
 });
 
 it('not coustomiseRange or range', () => {
-  const tree = renderer.create(
-    <RangeSelector componentName={'range-selector'}
-    initialSelected={[3,4]}
-    key={3}
-    name={'car'}
-  />
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(() => mount(<RangeSelector componentName={'range-selector'}
+  initialSelected={[3,4]}
+  key={3}
+  name={'car'}
+/>)).toThrow();
 });
 
 
