@@ -22,8 +22,6 @@
     "jest": "^21.2.1",
     "jest-cli": "^21.2.1",
     "react-test-renderer": "^16.2.0",
-    "sl-fe-lint": "^2.0.1",
-    "sl-gt-synclint": "^1.0.0",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.4.1"
   },
@@ -31,10 +29,9 @@
     "react": "16"
   },
   "scripts": {
-    "copylint": "yarn gulp synclint-copy --path sl-fe-lint",
-    "test": "yarn copylint && yarn lint && yarn jest --coverage",
-    "synclint": "yarn add sl-fe-lint && yarn copylint",
-    "lint": "yarn eslint assets/js",
+    "test": "yarn lint && yarn unit",
+    "unit": "yarn jest --coverage",
+    "lint": "yarn eslint src",
     "start": "yarn webpack-dev-server --content-base"
   },
   "repository": {

@@ -12,7 +12,7 @@ class InputCheckbox extends React.Component {
       input: mainClass + '-checkbox',
       label: mainClass + '-text',
       main: mainClass
-    }
+    };
   }
 
   onChange() {
@@ -20,7 +20,7 @@ class InputCheckbox extends React.Component {
   }
 
   render() {
-    const {isSelected, linked, labelContent} = this.props
+    const {isSelected, linked, labelContent} = this.props;
     return (
       <div className={this.className.mainRender}>
         <input
