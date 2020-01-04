@@ -21,7 +21,7 @@ module.exports = {
   },
 
   output: {
-    path: (path.join(__dirname,'/build/js')),
+    path: (path.join(__dirname,'docs/build/js')),
     publicPath:'build/js',
     filename: '[name].js'
   },
