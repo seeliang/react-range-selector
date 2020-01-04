@@ -150,7 +150,7 @@ exports[`renders customise 1`] = `
 </div>
 `;
 
-exports[`renders inital & customise 1`] = `
+exports[`renders initial & customise 1`] = `
 <div
   className="range-selector__item"
 >
@@ -288,7 +288,7 @@ exports[`renders inital & customise 1`] = `
 </div>
 `;
 
-exports[`renders inital & range 1`] = `
+exports[`renders initial & range 1`] = `
 <div
   className="range-selector__item"
 >
