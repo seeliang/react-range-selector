@@ -19,7 +19,8 @@ module.exports = {
 
   output: {
     path: (path.join(__dirname,'lib/')),
-    filename: '[name].js'
+    filename: '[name].js',
+    libraryTarget: 'umd'
   },
 
   plugins: [
@@ -27,7 +28,6 @@ module.exports = {
       comments: false
     })
   ],
-
   resolve: {
     modules: [
       'node_modules'
