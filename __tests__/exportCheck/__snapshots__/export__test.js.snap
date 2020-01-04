@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders range 1`] = `
+<div
+  className="range-selector__section"
+>
+  <b
+    className="range-selector__section-title"
+  >
+    car
+  </b>
+  <div
+    className="range-selector__item"
+  >
+    <input
+      checked={false}
+      className="range-selector__item-checkbox"
+      id="range-selector_car-0"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-0"
+    />
+    <label
+      className="range-selector__item-label "
+      htmlFor="range-selector_car-0"
+    >
+      3
+    </label>
+  </div>
+  <div
+    className="range-selector__item"
+  >
+    <input
+      checked={false}
+      className="range-selector__item-checkbox"
+      id="range-selector_car-1"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-1"
+    />
+    <label
+      className="range-selector__item-label "
+      htmlFor="range-selector_car-1"
+    >
+      4
+    </label>
+  </div>
+  <div
+    className="range-selector__item"
+  >
+    <input
+      checked={false}
+      className="range-selector__item-checkbox"
+      id="range-selector_car-2"
+      onChange={[Function]}
+      type="checkbox"
+      value="range-selector_car-2"
+    />
+    <label
+      className="range-selector__item-label "
+      htmlFor="range-selector_car-2"
+    >
+      5
+    </label>
+  </div>
+</div>
+`;
