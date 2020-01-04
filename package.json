@@ -26,7 +26,8 @@
     "webpack-dev-server": "^2.4.1"
   },
   "peerDependencies": {
-    "react": "16"
+    "react": "16",
+    "react-dom": "16"
   },
   "scripts": {
     "test": "yarn lint && yarn unit",
@@ -47,9 +48,7 @@
   "author": "sihui / me@sihuiliang.com",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.10",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "lodash": "^4.17.10"
   },
   "bin": {
     "codecov": "./bin/codecov"
