@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import RangeSelector, {initialFormState} from '../../src/index';
+import RangeSelector, {initialFormState, generatePropsWithData} from '../../src/index';
 
 const selectors = [
   {
@@ -36,24 +36,12 @@ class Form extends React.Component {
   listOfSelectors () {
     return selectors.map(
       (selector) => {
-        const { name,initialSelected,customiseRange, range} = selector;
-        let rangeData = {};
-        if (customiseRange) {
-          rangeData = {customiseRange};
-        }
-        if (range) {
-          rangeData = {range};
-        }
-        const props = {
-          key: name,
-          componentName: 'range-selector',
-          initialSelected,
-          name,
-          rangeUpdate: data => this.rangeUpdate(data),
-          ...rangeData
+        const data = {
+          ...selector,
+          callback: (data) => this.rangeUpdate(data)
         };
         return (
-          <RangeSelector {...props}/>
+          <RangeSelector {...generatePropsWithData(data)}/>
         );
       }
     );
