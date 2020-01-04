@@ -71,8 +71,6 @@ class Form extends React.Component {
 
   submit(e) {
     e.preventDefault();
-    const { indexRange } = this.state;
-    const values = {};
     alert(JSON.stringify(this.state));
   }
 
