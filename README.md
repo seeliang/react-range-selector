@@ -27,9 +27,12 @@ MIT licensed
 
 ## Release
 
+### 2.0.2
+* fix: incomplete src code
+
 ### 2.0.1
-* fix empty package
-* licence update
+* fix: empty package
+* chore: licence update
 
 ### 2.0
 * BREAKING: `rangeUpdate` return object [data](https://github.com/seeliang/react-range-selector/pull/57/files#diff-3d89a121d9489b4df1b85aa9fb02ef15R50) with `values`, `section`, `selectedIndex`
