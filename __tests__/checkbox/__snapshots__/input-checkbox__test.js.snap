@@ -2,18 +2,18 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="range-selector__item-input is-in-range"
+  className="range-selector__item"
 >
   <input
     checked={true}
-    className="range-selector__item-input-checkbox"
+    className="range-selector__item-checkbox"
     id="checkboxName"
     onChange={[Function]}
     type="checkbox"
     value="checkboxName"
   />
   <label
-    className="range-selector__item-input-text"
+    className="range-selector__item-label is-in-range"
     htmlFor="checkboxName"
   >
     3

@@ -162,8 +162,8 @@ class RangeSelector extends React.Component {
     inputList = this.createList();
 
     return (
-      <div className={'range-selector__item'}>
-        <b className={'range-selector__item-title'}>{this.props.name}</b>
+      <div className={'range-selector__section'}>
+        <b className={'range-selector__section-title'}>{this.props.name}</b>
         {inputList}
       </div>
     );

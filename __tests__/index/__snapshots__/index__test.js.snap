@@ -2,134 +2,134 @@
 
 exports[`renders customise 1`] = `
 <div
-  className="range-selector__item"
+  className="range-selector__section"
 >
   <b
-    className="range-selector__item-title"
+    className="range-selector__section-title"
   >
     car
   </b>
   <div
-    className="range-selector__item-input "
+    className="range-selector__item"
   >
     <input
       checked={false}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-0"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-0"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label "
       htmlFor="range-selector_car-0"
     >
       0.8
     </label>
   </div>
   <div
-    className="range-selector__item-input "
+    className="range-selector__item"
   >
     <input
       checked={false}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-1"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-1"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label "
       htmlFor="range-selector_car-1"
     >
       1
     </label>
   </div>
   <div
-    className="range-selector__item-input "
+    className="range-selector__item"
   >
     <input
       checked={false}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-2"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-2"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label "
       htmlFor="range-selector_car-2"
     >
       1.4
     </label>
   </div>
   <div
-    className="range-selector__item-input "
+    className="range-selector__item"
   >
     <input
       checked={false}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-3"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-3"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label "
       htmlFor="range-selector_car-3"
     >
       1.6
     </label>
   </div>
   <div
-    className="range-selector__item-input "
+    className="range-selector__item"
   >
     <input
       checked={false}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-4"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-4"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label "
       htmlFor="range-selector_car-4"
     >
       1.8
     </label>
   </div>
   <div
-    className="range-selector__item-input "
+    className="range-selector__item"
   >
     <input
       checked={false}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-5"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-5"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label "
       htmlFor="range-selector_car-5"
     >
       2
     </label>
   </div>
   <div
-    className="range-selector__item-input "
+    className="range-selector__item"
   >
     <input
       checked={false}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-6"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-6"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label "
       htmlFor="range-selector_car-6"
     >
       2.2
@@ -140,134 +140,134 @@ exports[`renders customise 1`] = `
 
 exports[`renders initial & customise 1`] = `
 <div
-  className="range-selector__item"
+  className="range-selector__section"
 >
   <b
-    className="range-selector__item-title"
+    className="range-selector__section-title"
   >
     car
   </b>
   <div
-    className="range-selector__item-input is-start is-in-range"
+    className="range-selector__item"
   >
     <input
       checked={true}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-0"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-0"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label is-start is-in-range"
       htmlFor="range-selector_car-0"
     >
       0.8
     </label>
   </div>
   <div
-    className="range-selector__item-input is-in-range"
+    className="range-selector__item"
   >
     <input
       checked={true}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-1"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-1"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label is-in-range"
       htmlFor="range-selector_car-1"
     >
       1
     </label>
   </div>
   <div
-    className="range-selector__item-input is-end is-in-range"
+    className="range-selector__item"
   >
     <input
       checked={true}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-2"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-2"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label is-end is-in-range"
       htmlFor="range-selector_car-2"
     >
       1.4
     </label>
   </div>
   <div
-    className="range-selector__item-input "
+    className="range-selector__item"
   >
     <input
       checked={false}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-3"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-3"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label "
       htmlFor="range-selector_car-3"
     >
       1.6
     </label>
   </div>
   <div
-    className="range-selector__item-input "
+    className="range-selector__item"
   >
     <input
       checked={false}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-4"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-4"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label "
       htmlFor="range-selector_car-4"
     >
       1.8
     </label>
   </div>
   <div
-    className="range-selector__item-input "
+    className="range-selector__item"
   >
     <input
       checked={false}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-5"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-5"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label "
       htmlFor="range-selector_car-5"
     >
       2
     </label>
   </div>
   <div
-    className="range-selector__item-input "
+    className="range-selector__item"
   >
     <input
       checked={false}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-6"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-6"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label "
       htmlFor="range-selector_car-6"
     >
       2.2
@@ -278,62 +278,62 @@ exports[`renders initial & customise 1`] = `
 
 exports[`renders initial & range 1`] = `
 <div
-  className="range-selector__item"
+  className="range-selector__section"
 >
   <b
-    className="range-selector__item-title"
+    className="range-selector__section-title"
   >
     car
   </b>
   <div
-    className="range-selector__item-input is-start is-in-range"
+    className="range-selector__item"
   >
     <input
       checked={true}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-0"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-0"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label is-start is-in-range"
       htmlFor="range-selector_car-0"
     >
       3
     </label>
   </div>
   <div
-    className="range-selector__item-input is-in-range"
+    className="range-selector__item"
   >
     <input
       checked={true}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-1"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-1"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label is-in-range"
       htmlFor="range-selector_car-1"
     >
       4
     </label>
   </div>
   <div
-    className="range-selector__item-input is-end is-in-range"
+    className="range-selector__item"
   >
     <input
       checked={true}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-2"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-2"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label is-end is-in-range"
       htmlFor="range-selector_car-2"
     >
       5
@@ -344,62 +344,62 @@ exports[`renders initial & range 1`] = `
 
 exports[`renders range 1`] = `
 <div
-  className="range-selector__item"
+  className="range-selector__section"
 >
   <b
-    className="range-selector__item-title"
+    className="range-selector__section-title"
   >
     car
   </b>
   <div
-    className="range-selector__item-input "
+    className="range-selector__item"
   >
     <input
       checked={false}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-0"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-0"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label "
       htmlFor="range-selector_car-0"
     >
       3
     </label>
   </div>
   <div
-    className="range-selector__item-input "
+    className="range-selector__item"
   >
     <input
       checked={false}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-1"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-1"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label "
       htmlFor="range-selector_car-1"
     >
       4
     </label>
   </div>
   <div
-    className="range-selector__item-input "
+    className="range-selector__item"
   >
     <input
       checked={false}
-      className="range-selector__item-input-checkbox"
+      className="range-selector__item-checkbox"
       id="range-selector_car-2"
       onChange={[Function]}
       type="checkbox"
       value="range-selector_car-2"
     />
     <label
-      className="range-selector__item-input-text"
+      className="range-selector__item-label "
       htmlFor="range-selector_car-2"
     >
       5
