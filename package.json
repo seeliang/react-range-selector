@@ -1,8 +1,8 @@
 {
   "name": "react-two-points-range-selector",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "React component for select range in the form",
-  "main": "src/index",
+  "main": "lib/index",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.23.1",
@@ -21,18 +21,24 @@
     "istanbul": "^0.4.2",
     "jest": "^21.2.1",
     "jest-cli": "^21.2.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-test-renderer": "^16.2.0",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.4.1"
   },
   "peerDependencies": {
-    "react": "16"
+    "react": "16",
+    "react-dom": "16"
   },
   "scripts": {
     "test": "yarn lint && yarn unit",
     "unit": "yarn jest --coverage",
     "lint": "yarn eslint src",
-    "start": "yarn webpack-dev-server --content-base"
+    "build": "yarn build:package && yarn build:script",
+    "build:package": "yarn webpack",
+    "build:script": "yarn webpack --config webpack.config.demo.js",
+    "start": "yarn webpack-dev-server --content-base --config webpack.config.demo.js"
   },
   "repository": {
     "type": "git",
@@ -44,15 +50,7 @@
   "author": "sihui / me@sihuiliang.com",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.10",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
-  },
-  "babel": {
-    "presets": [
-      "es2015",
-      "react"
-    ]
+    "lodash": "^4.17.10"
   },
   "bin": {
     "codecov": "./bin/codecov"
@@ -60,11 +58,5 @@
   "bugs": {
     "url": "https://github.com/seeliang/react-range-selector"
   },
-  "homepage": "https://github.com/seeliang/react-range-selector",
-  "jest": {
-    "unmockedModulePathPatterns": [
-      "node_modules/react/",
-      "node_modules/enzyme/"
-    ]
-  }
+  "homepage": "https://github.com/seeliang/react-range-selector"
 }
