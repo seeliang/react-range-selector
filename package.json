@@ -2,7 +2,7 @@
   "name": "react-two-points-range-selector",
   "version": "2.0.2",
   "description": "React component for select range in the form",
-  "main": "src/index",
+  "main": "lib/index",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.23.1",
@@ -32,7 +32,10 @@
     "test": "yarn lint && yarn unit",
     "unit": "yarn jest --coverage",
     "lint": "yarn eslint src",
-    "start": "yarn webpack-dev-server --content-base"
+    "build": "yarn build:package && yarn build:script",
+    "build:package": "yarn webpack",
+    "build:script": "yarn webpack --config webpack.config.demo.js",
+    "start": "yarn webpack-dev-server --content-base --config webpack.config.demo.js"
   },
   "repository": {
     "type": "git",
@@ -47,12 +50,6 @@
     "lodash": "^4.17.10",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
-  },
-  "babel": {
-    "presets": [
-      "es2015",
-      "react"
-    ]
   },
   "bin": {
     "codecov": "./bin/codecov"
