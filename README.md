@@ -26,6 +26,8 @@ the [html5 input range](https://www.w3.org/wiki/HTML/Elements/input/range) only 
 MIT licensed
 
 ## Release
+### 2.0.4
+* fix: update webpack build for package
 
 ### 2.0.3
 * fix: use `/lib`
