@@ -77,13 +77,13 @@ class Form extends React.Component {
       <form >
       <fieldset>
       <RangeSelector componentName={'range-selector'}
-        initalSelected={this.state.indexRange.cores}
+        initialSelected={this.state.indexRange.cores}
         name={'cores'}
         range={range.cores}
         rangeUpdate={(r,o) => this.rangeUpdate(r,o)}
       />
       <RangeSelector componentName={'range-selector'}
-        initalSelected={this.state.indexRange.frequency}
+        initialSelected={this.state.indexRange.frequency}
         name={'frequency'}
         customiseRange={range.frequency}
         rangeUpdate={(r,o) => this.rangeUpdate(r,o)}

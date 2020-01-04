@@ -10,13 +10,13 @@ class RangeSelector extends React.Component {
     range: React.PropTypes.array,
     customiseRange: React.PropTypes.array,
     componentName: React.PropTypes.string.isRequired,
-    initalSelected: React.PropTypes.array
+    initialSelected: React.PropTypes.array
   }
 
   constructor(props) {
     super(props);
     this.state = {
-      selected: Array.isArray(props.initalSelected) ? props.initalSelected : []
+      selected: Array.isArray(props.initialSelected) ? props.initialSelected : []
     };
 
     this.updateSelected = this.updateSelected.bind(this);

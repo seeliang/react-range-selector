@@ -16,7 +16,7 @@ class RangeSelectorGroup extends React.Component {
         return (
           <RangeSelector componentName={'range-selector'}
             customiseRange={selector.customiseRange}
-            initalSelected={selector.initalSelected}
+            initialSelected={selector.initialSelected}
             key={i}
             name={selector.name}
             range={selector.range}
