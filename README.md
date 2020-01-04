@@ -21,6 +21,12 @@ the [html5 input range](https://www.w3.org/wiki/HTML/Elements/input/range) only 
 MIT licensed
 
 ## Release
+
+### 2.0
+* BREAKING: `rangeUpdate` return object [data](https://github.com/seeliang/react-range-selector/pull/57/files#diff-3d89a121d9489b4df1b85aa9fb02ef15R50) with `value`, `section`, `selectedIndex`
+* FEAT: `initialFormState` to [generate initial state from data](https://github.com/seeliang/react-range-selector/pull/57/files#diff-3d89a121d9489b4df1b85aa9fb02ef15R32)
+* FEAT: `generatePropsWithData` [mapping data to RangerSelector](https://github.com/seeliang/react-range-selector/pull/57/files#diff-3d89a121d9489b4df1b85aa9fb02ef15R44)
+* CHORE: recover lint
 ### 1.3.0
 * add package feature 
 
