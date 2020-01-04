@@ -1,5 +1,8 @@
 export const mappingSelectIndexToResult = ({list, selectIndex}) => {
   let result = [];
+  if (!Array.isArray(list) || list.length < 1) {
+    throw new Error('list is incorrect for mapping');
+  }
   if (!selectIndex[1]) {
     result = [list[selectIndex[0]]];
   } else {
