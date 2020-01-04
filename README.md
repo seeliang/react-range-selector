@@ -5,8 +5,13 @@
 [![Dependencies](https://david-dm.org/seeliang/react-range-selector.svg)](https://david-dm.org/seeliang/react-range-selector)
 
 # React two points range selector
-the [html5 input range](https://www.w3.org/wiki/HTML/Elements/input/range) only supports one point, and it's not easy to use for mobile. this npm pack is an alternative solution with input checkbox  
-[Demo](http://seeliang.github.io/react-range-selector/)
+the [html5 input range](https://www.w3.org/wiki/HTML/Elements/input/range) only supports one point, and it's not easy to use for mobile. this npm pack is an alternative solution with input checkbox
+
+## Demo 
+[Demo page](http://seeliang.github.io/react-range-selector/)
+
+* [use as a package](https://github.com/seeliang/react-range-selector/blob/master/demo/import-set/form.js)
+* [use as a plugin](https://github.com/seeliang/react-range-selector/blob/master/app.html#L35)
 
 ## Features
  * based on [BEM](https://css-tricks.com/bem-101/)
@@ -14,13 +19,20 @@ the [html5 input range](https://www.w3.org/wiki/HTML/Elements/input/range) only 
  * support initial selected range
  * support customize range
  * standalong react [plugin](https://cdn.rawgit.com/seeliang/react-range-selector/master/build/js/react-range-selector.js) with options set for your quick prototype, [check the Demo](http://seeliang.github.io/react-range-selector/)
- 
+
 
 ## License
 
 MIT licensed
 
 ## Release
+
+### 2.0
+* BREAKING: `rangeUpdate` return object [data](https://github.com/seeliang/react-range-selector/pull/57/files#diff-3d89a121d9489b4df1b85aa9fb02ef15R50) with `values`, `section`, `selectedIndex`
+* BREAKING: [move to flat css structure](https://github.com/seeliang/react-range-selector/pull/57/commits/e2ab48a341449d24b20f47b0e039881cd8196b2b)
+* FEAT: `initialFormState` to [generate initial state from data](https://github.com/seeliang/react-range-selector/pull/57/files#diff-3d89a121d9489b4df1b85aa9fb02ef15R32)
+* FEAT: `generatePropsWithData` [mapping data to RangerSelector](https://github.com/seeliang/react-range-selector/pull/57/files#diff-3d89a121d9489b4df1b85aa9fb02ef15R44)
+* CHORE: recover lint
 ### 1.3.0
 * add package feature 
 

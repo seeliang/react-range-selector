@@ -6,33 +6,29 @@ import React from 'react';
 
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
 
 Enzyme.configure({ adapter: new Adapter() });
 
 
 it('both coustomiseRange and range', () => {
-  const tree = renderer.create(
+  expect(() => mount(
     <RangeSelector componentName={'range-selector'}
     customiseRange={[2,5]}
-    initalSelected={[3,4]}
+    initialSelected={[3,4]}
     key={3}
     name={'car'}
     range={[3,5]}
   />
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
+  )).toThrow();
 });
 
 it('not coustomiseRange or range', () => {
-  const tree = renderer.create(
-    <RangeSelector componentName={'range-selector'}
-    initalSelected={[3,4]}
-    key={3}
-    name={'car'}
-  />
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(() => mount(<RangeSelector componentName={'range-selector'}
+  initialSelected={[3,4]}
+  key={3}
+  name={'car'}
+/>)).toThrow();
 });
 
 
@@ -47,13 +43,13 @@ it('renders range', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('renders inital & range', () => {
+it('renders initial & range', () => {
   const tree = renderer.create(
     <RangeSelector componentName={'range-selector'}
     key={3}
     name={'car'}
     range={[3,5]}
-    initalSelected={[0,2]}
+    initialSelected={[0,2]}
   />
   ).toJSON();
   expect(tree).toMatchSnapshot();
@@ -70,13 +66,13 @@ it('renders customise', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('renders inital & customise', () => {
+it('renders initial & customise', () => {
   const tree = renderer.create(
     <RangeSelector componentName={'range-selector'}
     key={3}
     name={'car'}
     customiseRange={[0.8,1.0,1.4,1.6,1.8,2.0,2.2]}
-    initalSelected={[0,2]}
+    initialSelected={[0,2]}
   />
   ).toJSON();
   expect(tree).toMatchSnapshot();
@@ -84,7 +80,7 @@ it('renders inital & customise', () => {
 
 it('one point select render check', () => {
   const tree = shallow(<RangeSelector componentName={'range-selector'}
-    initalSelected={[4]}
+    initialSelected={[4]}
     key={3}
     name={'car'}
     range={[3,5]}
@@ -94,7 +90,7 @@ it('one point select render check', () => {
 
 it('two points select render check', () => {
   const tree = shallow(<RangeSelector componentName={'range-selector'}
-    initalSelected={[2,4]}
+    initialSelected={[2,4]}
     key={3}
     name={'car'}
     range={[3,7]}

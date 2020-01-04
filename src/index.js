@@ -2,6 +2,8 @@ import React from 'react';
 import Checkbox from './molecules/checkbox';
 import sortBy from 'lodash/sortBy';
 import takeRight from 'lodash/takeRight';
+import {rangeToList, mappingSelectedIndexToResult} from './helpers';
+
 
 class RangeSelector extends React.Component {
   displayName: 'RangeSelector';
@@ -10,13 +12,24 @@ class RangeSelector extends React.Component {
     range: React.PropTypes.array,
     customiseRange: React.PropTypes.array,
     componentName: React.PropTypes.string.isRequired,
-    initalSelected: React.PropTypes.array
+    initialSelected: React.PropTypes.array
   }
 
   constructor(props) {
     super(props);
+    this.list = [];
+    if (props.range) {
+      this.list = rangeToList(props.range);
+    }
+    if (props.customiseRange) {
+      this.list = props.customiseRange;
+    }
+
+    if(props.customiseRange) {
+      this.list = props.customiseRange;
+    }
     this.state = {
-      selected: Array.isArray(props.initalSelected) ? props.initalSelected : []
+      selected: Array.isArray(props.initialSelected) ? props.initialSelected : []
     };
 
     this.updateSelected = this.updateSelected.bind(this);
@@ -80,7 +93,13 @@ class RangeSelector extends React.Component {
   updateSelected(number) {
     const clickSelected = this.newlySelected(this.state.selected,number);
     if (typeof this.props.rangeUpdate === 'function') {
-      this.props.rangeUpdate(clickSelected, this.props.name);
+      const data = {
+        selectedIndex:clickSelected,
+        section:this.props.name,
+        values:mappingSelectedIndexToResult({list: this.list,selectedIndex: clickSelected})
+      };
+
+      this.props.rangeUpdate(data);
     }
     /*eslint-disable*/
     // need to use setState for form https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-set-state.md
@@ -134,21 +153,22 @@ class RangeSelector extends React.Component {
 
     if (Array.isArray(this.props.range)  &&
     Array.isArray(this.props.customiseRange)) {
-      return (<h1>Please use range or customiseRange, not both</h1>);
+      throw new Error('Please use range or customiseRange, not both');
     } else if (Array.isArray(this.props.range) === false  &&
     Array.isArray(this.props.customiseRange) === false) {
-      return (<h1>Please set range or customiseRange</h1>);
+      throw new Error('Please set range or customiseRange');
     }
 
     inputList = this.createList();
 
     return (
-      <div className={'range-selector__item'}>
-        <b className={'range-selector__item-title'}>{this.props.name}</b>
+      <div className={'range-selector__section'}>
+        <b className={'range-selector__section-title'}>{this.props.name}</b>
         {inputList}
       </div>
     );
   }
 }
 
-module.exports = RangeSelector;
+export default RangeSelector;
+export * from './helpers';

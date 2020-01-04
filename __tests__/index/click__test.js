@@ -19,7 +19,7 @@ it('empty range click', () => {
 
 it('two points click', () => {
   const tree = shallow(<RangeSelector componentName={'range-selector'}
-      initalSelected={[3,4]}
+      initialSelected={[3,4]}
       key={3}
       name={'car'}
       range={[3,5]}
@@ -30,7 +30,7 @@ it('two points click', () => {
 
 it('one point to two points range click', () => {
   const tree = shallow(<RangeSelector componentName={'range-selector'}
-      initalSelected={[4]}
+      initialSelected={[4]}
       key={3}
       name={'car'}
       range={[3,5]}
@@ -41,7 +41,7 @@ it('one point to two points range click', () => {
 
 it('one point to cancel click', () => {
   const tree = shallow(<RangeSelector componentName={'range-selector'}
-      initalSelected={[4]}
+      initialSelected={[4]}
       key={3}
       name={'car'}
       range={[3,5]}

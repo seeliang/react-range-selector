@@ -1,96 +1,78 @@
 import React from 'react';
 import {render} from 'react-dom';
-import RangeSelector from '../../src/index';
+import RangeSelector, {initialFormState, generatePropsWithData} from '../../src/index';
 
-const rangeWithSelectIndexToResult = (range, selectIndex) => {
-  const start = range[0];
-  let result = [];
-  if (!selectIndex[1]) {
-    result = [start + selectIndex[0]]
-  } else {
-    for (let i = start + selectIndex[0]; i <= start + selectIndex[1] ; i++) {
-      result.push(i);
-    }
+const selectors = [
+  {
+    name: 'Cores',
+    range: [3,8]
+  },
+  {
+    name: 'Frequency',
+    customiseRange: [2.5,3.4,4.2,6.3],
+    initialSelected: [0,2]
+  },
+  {
+    name: 'PCIE slots',
+    range: [1,4],
+    initialSelected: [0,1]
+  },
+  {
+    name: 'Ram size',
+    customiseRange: [2,4,6,8],
+    initialSelected: [2,3]
   }
-  return result;
-};
-
-const listWithSelectIndexToResult = (list, selectIndex) => {
-  let result = [];
-  if (!selectIndex[1]) {
-    result = [list[selectIndex[0]]];
-  } else {
-    for (let i = selectIndex[0]; i <= selectIndex[1] ; i++) {
-      result.push(list[i]);
-    }
-  }
-  return result;
-};
-
-const type = {
-  cores: 'range',
-  frequency: 'list'
-}
-
-const range = {
-  cores:[3,8],
-  frequency: [2.5,3.4,4.2,6.3]
-}
+];
 
 class Form extends React.Component {
   displayName: 'TestForm';
   constructor(props) {
     super(props);
     this.state = {
-      indexRange: {
-        cores: [3,5],
-        frequency: [2]
-      }
+      ...initialFormState(selectors)
     };
   }
 
-  rangeUpdate(range,section) {
+  listOfSelectors () {
+    return selectors.map(
+      (selector) => {
+        const data = {
+          ...selector,
+          callback: (data) => this.rangeUpdate(data)
+        };
+        return (
+          <RangeSelector {...generatePropsWithData(data)}/>
+        );
+      }
+    );
+  }
+
+  rangeUpdate({selectedIndex,section,values}) {
     this.setState((prev) => {
-      let newSet = prev.indexRange;
-      newSet[section] = range;
-      return {indexRange: newSet};
+      let newSet = prev.indexRange,
+        newValues = prev.values;
+      newSet[section] = selectedIndex;
+      newValues[section] = values;
+      return {indexRange: newSet, values: newValues};
     });
   }
 
   submit(e) {
     e.preventDefault();
-    const { indexRange } = this.state
-    const values = {};
-    for(const i in indexRange) {
-      if (type[i] === 'range') {
-        values[i] = rangeWithSelectIndexToResult(range[i],indexRange[i]);
-      }
-      if (type[i] === 'list') {
-        values[i] = listWithSelectIndexToResult(range[i],indexRange[i]);
-      }
-    }
-    alert(JSON.stringify(values))
+    alert(JSON.stringify(this.state));
   }
 
   render() {
     return (
       <form >
-      <fieldset>
-      <RangeSelector componentName={'range-selector'}
-        initalSelected={this.state.indexRange.cores}
-        name={'cores'}
-        range={range.cores}
-        rangeUpdate={(r,o) => this.rangeUpdate(r,o)}
-      />
-      <RangeSelector componentName={'range-selector'}
-        initalSelected={this.state.indexRange.frequency}
-        name={'frequency'}
-        customiseRange={range.frequency}
-        rangeUpdate={(r,o) => this.rangeUpdate(r,o)}
-      />
-      <input type="submit" value="submit" onClick={e => this.submit(e)}/>
-      </fieldset>
-      
+        <fieldset>
+          {this.listOfSelectors()}
+          <input onClick={e => this.submit(e)}
+            type="submit"
+            value="submit"
+          />
+        </fieldset>
+
       </form>
     );
   }

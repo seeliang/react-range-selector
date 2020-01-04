@@ -2,42 +2,39 @@ import React from 'react';
 class InputCheckbox extends React.Component {
   displayName: 'InputCheckbox';
   constructor(props) {
-    const stateClass = props.stateClass,
-      mainClass = 'range-selector__item-input';
+    const mainClass = 'range-selector__item';
 
     super(props);
     this.onChange = this.onChange.bind(this);
-    this.state = {
-      className: {
-        mainRender: mainClass + ' ' + stateClass,
-        input: mainClass + '-checkbox',
-        label: mainClass + '-text',
-        main: mainClass
-      }
+    this.className = {
+      mainRender: mainClass,
+      input: mainClass + '-checkbox',
+      label: mainClass + '-label',
+      main: mainClass
     };
   }
-
 
   onChange() {
     this.props.inputChecked(this.props.value);
   }
 
   render() {
+    const {isSelected, linked, labelContent, stateClass} = this.props;
     return (
-      <div className={this.state.className.mainRender}>
+      <div className={this.className.mainRender}>
         <input
-          checked={this.props.isSelected}
-          className={this.state.className.input}
-          id={this.props.linked}
+          checked={isSelected}
+          className={this.className.input}
+          id={linked}
           onChange={this.onChange}
           type={'checkbox'}
-          value={this.props.linked}
+          value={linked}
         />
         <label
-          className={this.state.className.label}
-          htmlFor={this.props.linked}
+          className={`${this.className.label} ${stateClass}`}
+          htmlFor={linked}
         >
-          {this.props.labelContent}
+          {labelContent}
         </label>
       </div>
     );
