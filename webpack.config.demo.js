@@ -1,8 +1,11 @@
 const webpack = require('webpack'),
-  path =  require('path');
+  path =  require('path'),
+  CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
+  // TODO: build set
 module.exports = {
   entry: {
-    index: './src/index.js'
+    'react-range-selector': './demo/plugin-set/app.js', // todo: sort the filename
+    'form' : './demo/import-set/form.js'
   },
 
   externals: {
@@ -18,7 +21,8 @@ module.exports = {
   },
 
   output: {
-    path: (path.join(__dirname,'lib/')),
+    path: (path.join(__dirname,'docs/build/js')),
+    publicPath:'build/js',
     filename: '[name].js'
   },
 
