@@ -56,11 +56,5 @@
   "bugs": {
     "url": "https://github.com/seeliang/react-range-selector"
   },
-  "homepage": "https://github.com/seeliang/react-range-selector",
-  "jest": {
-    "unmockedModulePathPatterns": [
-      "node_modules/react/",
-      "node_modules/enzyme/"
-    ]
-  }
+  "homepage": "https://github.com/seeliang/react-range-selector"
 }
