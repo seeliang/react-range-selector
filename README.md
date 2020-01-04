@@ -27,6 +27,9 @@ MIT licensed
 
 ## Release
 
+### 2.0.3
+* fix: use `/lib`
+
 ### 2.0.2
 * fix: incomplete src code
 
