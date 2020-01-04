@@ -2,7 +2,7 @@ import React from 'react';
 import Checkbox from './molecules/checkbox';
 import sortBy from 'lodash/sortBy';
 import takeRight from 'lodash/takeRight';
-import {rangeToList, mappingSelectIndexToResult} from './helpers';
+import {rangeToList, mappingSelectedIndexToResult} from './helpers';
 
 
 class RangeSelector extends React.Component {
@@ -96,7 +96,7 @@ class RangeSelector extends React.Component {
       const data = {
         selectedIndex:clickSelected,
         section:this.props.name,
-        values:mappingSelectIndexToResult({list: this.list,selectIndex: clickSelected})
+        values:mappingSelectedIndexToResult({list: this.list,selectedIndex: clickSelected})
       };
 
       this.props.rangeUpdate(data);

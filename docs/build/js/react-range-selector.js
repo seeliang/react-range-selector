@@ -853,18 +853,18 @@ var rangeToList = exports.rangeToList = function rangeToList(range) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var mappingSelectIndexToResult = exports.mappingSelectIndexToResult = function mappingSelectIndexToResult(_ref) {
+var mappingSelectedIndexToResult = exports.mappingSelectedIndexToResult = function mappingSelectedIndexToResult(_ref) {
   var list = _ref.list,
-      selectIndex = _ref.selectIndex;
+      selectedIndex = _ref.selectedIndex;
 
   var result = [];
   if (!Array.isArray(list) || list.length < 1) {
     throw new Error('list is incorrect for mapping');
   }
-  if (!selectIndex[1]) {
-    result = [list[selectIndex[0]]];
+  if (!selectedIndex[1]) {
+    result = [list[selectedIndex[0]]];
   } else {
-    for (var i = selectIndex[0]; i <= selectIndex[1]; i++) {
+    for (var i = selectedIndex[0]; i <= selectedIndex[1]; i++) {
       result.push(list[i]);
     }
   }
@@ -1572,7 +1572,7 @@ var RangeSelector = function (_React$Component) {
         var data = {
           selectedIndex: clickSelected,
           section: this.props.name,
-          values: (0, _helpers.mappingSelectIndexToResult)({ list: this.list, selectIndex: clickSelected })
+          values: (0, _helpers.mappingSelectedIndexToResult)({ list: this.list, selectedIndex: clickSelected })
         };
 
         this.props.rangeUpdate(data);
@@ -1753,7 +1753,7 @@ var initialFormState = exports.initialFormState = function initialFormState(sele
       list = customiseRange;
     }
 
-    var initialValue = (0, _mappingSelectedIndexToResult.mappingSelectIndexToResult)({ list: list, selectIndex: i.initialSelected });
+    var initialValue = (0, _mappingSelectedIndexToResult.mappingSelectedIndexToResult)({ list: list, selectedIndex: i.initialSelected });
     return _extends({}, r, {
       indexRange: _extends({}, r.indexRange, _defineProperty({}, name, initialSelected)),
       values: _extends({}, r.values, _defineProperty({}, name, initialValue))

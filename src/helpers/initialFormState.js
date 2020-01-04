@@ -1,5 +1,5 @@
 import { rangeToList } from './rangeToList';
-import {mappingSelectIndexToResult} from './mappingSelectedIndexToResult';
+import {mappingSelectedIndexToResult} from './mappingSelectedIndexToResult';
 
 export const initialFormState = selectors => selectors.reduce((r,i) => {
   if (!i.initialSelected) {
@@ -14,7 +14,7 @@ export const initialFormState = selectors => selectors.reduce((r,i) => {
     list = customiseRange;
   }
 
-  const initialValue = mappingSelectIndexToResult({list,selectIndex: i.initialSelected});
+  const initialValue = mappingSelectedIndexToResult({list,selectedIndex: i.initialSelected});
   return {...r,
     indexRange: {
       ...r.indexRange,
