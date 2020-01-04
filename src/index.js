@@ -2,6 +2,8 @@ import React from 'react';
 import Checkbox from './molecules/checkbox';
 import sortBy from 'lodash/sortBy';
 import takeRight from 'lodash/takeRight';
+import {rangeToList, mappingSelectIndexToResult} from './helpers';
+
 
 class RangeSelector extends React.Component {
   displayName: 'RangeSelector';
@@ -15,6 +17,17 @@ class RangeSelector extends React.Component {
 
   constructor(props) {
     super(props);
+    this.list = [];
+    if (props.range) {
+      this.list = rangeToList(props.range);
+    }
+    if (props.customiseRange) {
+      this.list = props.customiseRange;
+    }
+
+    if(props.customiseRange) {
+      this.list = props.customiseRange;
+    }
     this.state = {
       selected: Array.isArray(props.initialSelected) ? props.initialSelected : []
     };
@@ -80,7 +93,13 @@ class RangeSelector extends React.Component {
   updateSelected(number) {
     const clickSelected = this.newlySelected(this.state.selected,number);
     if (typeof this.props.rangeUpdate === 'function') {
-      this.props.rangeUpdate(clickSelected, this.props.name);
+      const data = {
+        selectedIndex:clickSelected,
+        section:this.props.name,
+        values:mappingSelectIndexToResult({list: this.list,selectIndex: clickSelected})
+      };
+
+      this.props.rangeUpdate(data);
     }
     /*eslint-disable*/
     // need to use setState for form https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-set-state.md
@@ -151,4 +170,5 @@ class RangeSelector extends React.Component {
   }
 }
 
-module.exports = RangeSelector;
+export default RangeSelector;
+export * from './helpers';
