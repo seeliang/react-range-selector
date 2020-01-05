@@ -6,5 +6,8 @@ module.exports = {
   collectCoverageFrom: [
     '!__tests__/exportCheck/**/*.*',
     'src/**/*.*'
+  ],
+  modulePaths: [
+    '<rootDir>'
   ]
 };
