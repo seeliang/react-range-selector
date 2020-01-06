@@ -30,8 +30,9 @@
     "react-dom": "16"
   },
   "scripts": {
-    "test": "yarn lint && yarn unit",
-    "unit": "yarn jest --coverage",
+    "test": "yarn lint && yarn test:build-export && yarn test:unit",
+    "test:unit": "yarn jest --coverage",
+    "test:build-export": "yarn build:package",
     "lint": "yarn eslint src",
     "build": "yarn build:package && yarn build:script",
     "build:package": "yarn webpack",
