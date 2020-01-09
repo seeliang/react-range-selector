@@ -14,7 +14,7 @@ class Routes extends React.Component {
 
   componentDidMount () {
     if(this.props.feed.fetched === false) {
-      this.props.feedFetch('people');
+      this.props.feedFetch('people.json');
     }
   }
 
