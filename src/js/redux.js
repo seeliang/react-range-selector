@@ -11,24 +11,17 @@ function mapStateTOProps() {
   };
 }
 
-function mapDispachToProps(dispatch) {
+function mapDispatchToProps(dispatch) {
   return bindActionCreators(actions,dispatch);
 }
 
-class Redux extends React.Component {
-  displayName: 'Redux';
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const ReduxMain = connect(mapStateTOProps,mapDispachToProps)(this.props.content);
-    return (
-      <Provider store={store}>
-        <ReduxMain/>
-      </Provider>
-    );
-  }
-}
+const Redux = ({content}) => {
+  const ReduxMain = connect(mapStateTOProps,mapDispatchToProps)(content);
+  return (
+    <Provider store={store}>
+      <ReduxMain/>
+    </Provider>
+  );
+};
 
 export default Redux;
