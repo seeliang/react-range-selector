@@ -2,17 +2,9 @@ import React from 'react';
 
 import UserLink from '../atoms/link';
 
-class Page extends React.Component {
-  displayName: 'Page';
-  constructor(props) {
-    super(props);
-    this.reload = () => {
-      this.load();
-    };
-  }
 
-  lists() {
-    return this.props.feed.data.results.map(
+const lists = (results) => {
+    return results.map(
       (user,i) => {
         return (
           <UserLink
@@ -22,15 +14,13 @@ class Page extends React.Component {
           />
         );
       });
-  }
+  },
 
-  render() {
-    return (
+  Page = ({feed}) =>
+    (
       <div>
-        {this.lists()}
+        {lists(feed.data.results)}
       </div>
     );
-  }
-}
 
 export default Page;
