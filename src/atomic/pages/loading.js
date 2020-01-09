@@ -6,9 +6,6 @@ class Loading extends React.Component {
   displayName: 'Loading';
   constructor(props) {
     super(props);
-    this.reload = () => {
-      this.load();
-    };
   }
 
   load() {
@@ -21,7 +18,7 @@ class Loading extends React.Component {
       return (
         <div>
           <h1> oh~ no, we have some issue from server side </h1>
-          <Button action={this.reload}
+          <Button action={() => this.load()}
             name="Try it again"
           />
         </div>
