@@ -14,7 +14,7 @@ class Page extends React.Component {
   }
 
   lists() {
-    return this.props.feed.feed.results.map(
+    return this.props.feed.data.results.map(
       (user,i) => {
         return (
           <UserLink
