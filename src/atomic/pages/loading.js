@@ -28,7 +28,7 @@ class Loading extends React.Component {
       );
     }
 
-    if(feed.fetched === false || feed.feed.results.length < 1) {
+    if(feed.fetched === false || feed.data.results.length < 1) {
       return  <h1> loading ... </h1>;
     }
 
