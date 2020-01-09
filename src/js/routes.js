@@ -13,7 +13,7 @@ class Routes extends React.Component {
   }
 
   componentDidMount () {
-    if(this.props.feed.fetched === false) {
+    if(this.props.feed.status.fetched === false) {
       this.props.feedFetch('people.json');
     }
   }
@@ -25,7 +25,7 @@ class Routes extends React.Component {
           <Route exact
             path="/"
             render={() => (
-              this.props.feed.fetched === false ? <Redirect to="/loading" /> :
+              this.props.feed.status.fetched === false ? <Redirect to="/loading" /> :
                 <Redirect to="/page"/>
             )}
           />

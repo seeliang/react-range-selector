@@ -3,23 +3,23 @@ import {combineReducers} from 'redux';
 const feed = (state = {}, action) => {
   switch(action.type) {
   case 'FETCHING': {
-    state = {...state, fetching: true, fetchError: false};
+    state = {...state, status: { ...state.status,fetching: true , fetchError: false}};
     break;
   }
   case 'RECEIVED': {
-    state = {...state, data:action.content, fetched: true, fetching: false };
+    state = {...state, data:action.content, status: { ...state.status,fetching: false , fetched: true }};
     break;
   }
   case 'ERROR': {
-    state = {...state, error:action.content, fetchError: true, fetching: false};
+    state = {...state, status: { ...state.status, error:action.content, fetchError: true}} ;
     break;
   }
   case 'UPDATE API FETCHED': {
-    state = {...state, apiFetched: action.content};
+    state = {...state, status: { ...state.status, apiFetched: action.content} };
     break;
   }
   case 'UPDATE API TARGET': {
-    state = {...state, apiTarget: action.content};
+    state = {...state, status: { ...state.status, apiTarget: action.content}};
     break;
   }
   }
