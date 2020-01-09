@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 
-const feedFetch = (state = {}, action) => {
+const feed = (state = {}, action) => {
   switch(action.type) {
   case 'FETCHING': {
     state = {...state, fetching: true, fetchError: false};
@@ -27,5 +27,5 @@ const feedFetch = (state = {}, action) => {
 };
 
 export default combineReducers({
-  feed: feedFetch
+  feed
 });
