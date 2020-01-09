@@ -15,7 +15,7 @@ class Routes extends React.Component {
   componentDidMount () {
     const {feedFetch, feed} = this.props;
     if(feed.status.fetched === false) {
-      feedFetch('people.json');
+      feedFetch('people.jso');
     }
   }
 
@@ -36,7 +36,6 @@ class Routes extends React.Component {
             render={() => (
               <Page
                 feed={feed}
-                feedFetch={feedFetch}
               />
             )}
           />
