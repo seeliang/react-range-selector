@@ -9,7 +9,8 @@ class People extends React.Component {
   }
 
   lists() {
-    let people = this.props.feed.data.results[this.props.match.params.id];
+    const {feed, match} = this.props;
+    let people = feed.data.results[match.params.id];
     return (
       <div>
         <h1>{people.name}</h1>
