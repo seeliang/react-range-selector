@@ -4,11 +4,11 @@
   "description": "react redux router demo",
   "main": "index.js",
   "scripts": {
-    "js-lint": "./node_modules/.bin/eslint src/js --ignore-pattern __test__",
-    "lint-sync": "./node_modules/.bin/gulp synclint-copy --path sl-fe-lint",
-    "publish": "NODE_ENV=prod node node_modules/.bin/gulp publish",
-    "start": "./node_modules/.bin/gulp vendor:dev & NODE_ENV=dev node node_modules/.bin/webpack-dev-server --hot --inline -d",
-    "test": "node node_modules/.bin/jest"
+    "js-lint": "yarn eslint src/js --ignore-pattern __test__",
+    "lint-sync": "yarn gulp synclint-copy --path sl-fe-lint",
+    "publish": "NODE_ENV=prod yarn gulp publish",
+    "start": "yarn gulp vendor:dev & NODE_ENV=dev yarn webpack-dev-server --hot --inline -d",
+    "test": "yarn jest"
   },
   "repository": {
     "type": "git",
