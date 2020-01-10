@@ -17,7 +17,7 @@ const composeEnhancers =
         fetched: false
       },
       data: {
-        result: []
+        results: []
       }
     }
   };
