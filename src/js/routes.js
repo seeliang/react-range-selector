@@ -1,5 +1,6 @@
 import React , {useEffect}from 'react';
-
+import {useSelector, useDispatch} from 'react-redux';
+import {feedFetch} from '../js/actions';
 import { HashRouter as Router, Route, Redirect} from 'react-router-dom';
 
 import Loading from '../atomic/pages/loading';
@@ -8,11 +9,13 @@ import People from '../atomic/pages/people';
 
 
 
-const Routes = ({feedFetch, feed}) => {
+const Routes = () => {
   //demo error fetch
+  const {feed} = useSelector(state => state),
+    dispatch = useDispatch();
   useEffect(() => {
     if(feed.status.fetched === false) {
-      feedFetch('people.jso');
+      dispatch(feedFetch('people.jso'));
     }
   },[]);
 
