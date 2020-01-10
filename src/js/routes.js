@@ -27,14 +27,9 @@ const
           <Route path="/loading">
             <Loading />
           </Route>
-          <Route
-            path="/people/:id"
-            render={(props) => (
-              <People
-                {...props}
-              />
-            )}
-          />
+          <Route path="/people/:id">
+            <People />
+          </Route>
           <Route path="/page">
             <Page/>
           </Route>
