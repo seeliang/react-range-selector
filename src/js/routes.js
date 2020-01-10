@@ -1,3 +1,4 @@
+/* eslint-disable react/no-multi-comp */
 import React , {useEffect}from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {feedFetch} from '../js/actions';
@@ -7,7 +8,26 @@ import Loading from '../atomic/pages/loading';
 import Page from '../atomic/pages/page';
 import People from '../atomic/pages/people';
 
-const
+const DataRoute = ({ children, ...rest }) => {
+    const {feed} = useSelector(state => state);
+    return (
+      <Route
+        {...rest}
+        render={({ location }) =>
+          feed.status.fetched ? (
+            children
+          ) : (
+            <Redirect
+              to={{
+                pathname: '/loading',
+                state: { from: location }
+              }}
+            />
+          )
+        }
+      />
+    );
+  },
   Routes = () => {
   //demo error fetch
     const {feed} = useSelector(state => state),
@@ -21,18 +41,20 @@ const
     return (
       <Router>
         <div>
-          <Route path="/" >
+          <Route exact
+            path="/"
+          >
             <Redirect to="/loading" />
           </Route>
           <Route path="/loading">
             <Loading />
           </Route>
-          <Route path="/people/:id">
+          <DataRoute path="/people/:id">
             <People />
-          </Route>
-          <Route path="/page">
+          </DataRoute>
+          <DataRoute path="/page">
             <Page/>
-          </Route>
+          </DataRoute>
         </div>
       </Router>
     );
