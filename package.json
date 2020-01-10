@@ -24,6 +24,7 @@
   "bugs": {
     "url": "https://github.com/seeliang/react-redux-router/issues"
   },
+  "engines" : { "node" : "10" },
   "homepage": "https://github.com/seeliang/react-redux-router#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
