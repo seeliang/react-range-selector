@@ -58,11 +58,12 @@ gulp.task('js:clean', () => {
     .pipe(clean());
 });
 
-gulp.task('publish', () => {
+gulp.task('publish', (done) => {
   sequence(
     'clean',
     ['html','webpack','vendor:publish'],
     'js:rename',
     'js:clean'
   );
+  return done();
 });

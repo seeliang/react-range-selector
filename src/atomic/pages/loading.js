@@ -1,13 +1,17 @@
 import React from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import Button from '../atoms/button';
 import { Redirect } from 'react-router-dom';
+import {feedFetch} from '../../js/actions';
 
-const Loading = ({feed, feedFetch}) => {
+const Loading = () => {
+  const {feed} = useSelector(state => state),
+    dispatch = useDispatch();
   if(typeof feed.status.fetchError === 'boolean' && feed.status.fetchError === true) {
     return (
       <div>
         <h1> oh~ no, we have some issue from server side </h1>
-        <Button action={() => feedFetch('people.json')}
+        <Button action={() => dispatch(feedFetch('people.json'))}
           name="Try it again"
         />
       </div>
@@ -19,6 +23,5 @@ const Loading = ({feed, feedFetch}) => {
 
   return <Redirect to="/page"/>;
 };
-
 
 export default Loading;

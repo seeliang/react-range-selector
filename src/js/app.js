@@ -5,9 +5,10 @@ import Redux from './redux';
 import Routes from './routes';
 
 const App = () => (
-  <Redux
-    content={Routes}
-  />
+  <Redux >
+    <Routes/>
+  </Redux>
 );
+
 
 render(<App/>, document.getElementById('app'));

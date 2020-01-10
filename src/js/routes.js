@@ -1,59 +1,42 @@
 import React , {useEffect}from 'react';
-
-import { HashRouter as Router, Route, Redirect} from 'react-router-dom';
+import {useSelector, useDispatch} from 'react-redux';
+import {feedFetch} from '../js/actions';
+import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 
 import Loading from '../atomic/pages/loading';
 import Page from '../atomic/pages/page';
 import People from '../atomic/pages/people';
 
-
-
-const Routes = ({feedFetch, feed}) => {
+const
+  Routes = () => {
   //demo error fetch
-  useEffect(() => {
-    if(feed.status.fetched === false) {
-      feedFetch('people.jso');
-    }
-  },[]);
+    const {feed} = useSelector(state => state),
+      dispatch = useDispatch();
+    useEffect(() => {
+      if(feed.status.fetched === false) {
+        dispatch(feedFetch('people.jso'));
+      }
+    },[]);
 
-  return (
-    <Router>
-      <div>
-        <Route
-          path="/"
-          render={() => (
+    return (
+      <Router>
+        <div>
+          <Route path="/" >
             <Redirect to="/loading" />
-          )}
-        />
-        <Route
-          path="/page"
-          render={() => (
-            <Page
-              feed={feed}
-            />
-          )}
-        />
-        <Route
-          path="/loading"
-          render={() => (
-            <Loading feed={feed}
-              feedFetch={feedFetch}
-            />
-          )}
-        />
-        <Route
-          path="/people/:id"
-          render={(props) => (
-            <People
-              feed={feed}
-              {...props}
-            />
-          )}
-        />
-      </div>
-    </Router>
-  );
-};
+          </Route>
+          <Route path="/loading">
+            <Loading />
+          </Route>
+          <Route path="/people/:id">
+            <People />
+          </Route>
+          <Route path="/page">
+            <Page/>
+          </Route>
+        </div>
+      </Router>
+    );
+  };
 
 
 export default Routes;

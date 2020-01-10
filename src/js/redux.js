@@ -1,25 +1,13 @@
-import React from 'react';
-
-import * as actions from './actions';
+import React, { Children } from 'react';
 import store from './store';
-import {bindActionCreators} from 'redux';
-import {Provider,connect} from 'react-redux';
+import {Provider} from 'react-redux';
 
-function mapStateTOProps() {
-  return {
-    feed: store.getState().feed
-  };
-}
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actions,dispatch);
-}
+const Redux = ({children}) => {
 
-const Redux = ({content}) => {
-  const ReduxMain = connect(mapStateTOProps,mapDispatchToProps)(content);
   return (
     <Provider store={store}>
-      <ReduxMain/>
+      {children}
     </Provider>
   );
 };
