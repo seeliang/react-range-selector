@@ -1,7 +1,7 @@
 import React , {useEffect}from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {feedFetch} from '../js/actions';
-import { HashRouter as Router, Route, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 
 import Loading from '../atomic/pages/loading';
 import Page from '../atomic/pages/page';
