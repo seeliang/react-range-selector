@@ -5,13 +5,8 @@ module.exports = {
   },
 
   externals: {
-    'axios': 'axios',
     'react': 'React',
-    'react-redux': 'ReactRedux',
-    'react-dom': 'ReactDOM',
-    'react-router-dom': 'ReactRouterDOM',
-    'redux': 'Redux'
-    //NOTE: redux thunk is tiny
+    'react-dom': 'ReactDOM'
   },
 
   module: {
