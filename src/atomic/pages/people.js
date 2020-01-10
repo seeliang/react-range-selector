@@ -1,6 +1,8 @@
 import React from 'react';
+import { useSelector} from 'react-redux';
 
-const People = ({feed, match}) => {
+const People = ({match}) => {
+  const {feed} = useSelector(state => state);
   let people = feed.data.results[match.params.id];
   return (
     <div>
