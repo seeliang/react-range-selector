@@ -9,9 +9,6 @@ const clean = require('gulp-clean'),
   rename = require('gulp-rename'),
   sequence = require('gulp4-run-sequence'),
   webpack = require('webpack-stream');
-
-require('sl-gt-synclint')(gulp);
-
 gulp.task('html', () => {
   return gulp.src('./index.html')
     .pipe(replace('.js','.min.js'))

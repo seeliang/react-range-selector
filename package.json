@@ -44,8 +44,6 @@
     "gulp4-run-sequence": "*",
     "jest": "^20.0.4",
     "react-test-renderer": "^16.12.0",
-    "sl-fe-lint": "^2.0.1",
-    "sl-gt-synclint": "^1.1.1",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1",
