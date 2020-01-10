@@ -8,14 +8,7 @@ this is a demo of how react redux router could be implemented
 ----------
 
 ## Env 
-* node 6.11.2
-* npm 3.10.10
-
-----------
-
-## linter 
-* [eslint](https://www.npmjs.com/package/eslint)
-* [sass lint](https://www.npmjs.com/package/sass-lint)
+* node 10
 
 ----------
 
@@ -30,9 +23,43 @@ To start
  `npm run start`
 check render at http://localhost:8080/
 
-
 ----------
 
 ## Publish 
 
 npm run publish
+
+-----
+## Demonstrations included
+
+### JS
+* es6
+* jsx
+
+### React route
+* with fetch gate
+* hook usage demo
+
+### React 
+* hook
+
+### Redux
+* hook
+
+### webpack 
+
+build for js
+* production build
+* development set with webpack dev server
+* compile es6 with babel
+
+### gulp
+* build for static SPA
+
+### lint
+* consistent coding style
+* common error check
+
+### CI
+* test
+* build
