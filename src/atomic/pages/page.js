@@ -1,20 +1,11 @@
 import React from 'react';
-
+import {useSelector} from 'react-redux';
 import UserLink from '../atoms/link';
-import Button from '../atoms/button';
-import Loading from './loading';
 
-class Page extends React.Component {
-  displayName: 'Page';
-  constructor(props) {
-    super(props);
-    this.reload = () => {
-      this.load();
-    };
-  }
 
-  lists() {
-    return this.props.feed.data.results.map(
+const lists = () => {
+    const {feed} = useSelector(state => state);
+    return feed.data.results.map(
       (user,i) => {
         return (
           <UserLink
@@ -24,15 +15,12 @@ class Page extends React.Component {
           />
         );
       });
-  }
+  },
 
-  render() {
-    return (
-      <div>
-        {this.lists()}
-      </div>
-    );
-  }
-}
+  Page = () =>
+    (<div>
+      {lists()}
+    </div>)
+    ;
 
 export default Page;

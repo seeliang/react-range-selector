@@ -1,30 +1,17 @@
 import React from 'react';
-import Button from '../atoms/button';
-import Loading from './loading';
+import { useSelector} from 'react-redux';
+import {useRouteMatch} from 'react-router-dom';
 
-class People extends React.Component {
-  displayName: 'People';
-  constructor(props) {
-    super(props);
-  }
-
-  lists() {
-    let people = this.props.feed.data.results[this.props.match.params.id];
-    return (
-      <div>
-        <h1>{people.name}</h1>
-        <h2>height: {people.height}</h2>
-      </div>
-    );
-  }
-
-  render() {
-    return (
-      <div>
-        {this.lists()}
-      </div>
-    );
-  }
-}
+const People = () => {
+  const {feed} = useSelector(state => state),
+    match = useRouteMatch('/people/:id');
+  let people = feed.data.results[match.params.id];
+  return (
+    <div>
+      <h1>{people.name}</h1>
+      <h2>height: {people.height}</h2>
+    </div>
+  );
+};
 
 export default People;
