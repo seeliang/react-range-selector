@@ -1,3 +1,5 @@
 const base = require('./webpack.base.js');
 
-module.exports = base;
+module.exports = Object.assign(base , {devServer: {
+  historyApiFallback: true
+}});
