@@ -11,9 +11,14 @@ const composeEnhancers =
   enhancers = composeEnhancers(middleware),
   initialState = {
     feed: {
-      apiFetched: '',
-      apiTarget: '',
-      fetched: false
+      status: {
+        apiFetched: '',
+        apiTarget: '',
+        fetched: false
+      },
+      data: {
+        results: []
+      }
     }
   };
 

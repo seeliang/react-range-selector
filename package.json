@@ -4,11 +4,10 @@
   "description": "react redux router demo",
   "main": "index.js",
   "scripts": {
-    "js-lint": "./node_modules/.bin/eslint src/js --ignore-pattern __test__",
-    "lint-sync": "./node_modules/.bin/gulp synclint-copy --path sl-fe-lint",
-    "publish": "NODE_ENV=prod node node_modules/.bin/gulp publish",
-    "start": "./node_modules/.bin/gulp vendor:dev & NODE_ENV=dev node node_modules/.bin/webpack-dev-server --hot --inline -d",
-    "test": "node node_modules/.bin/jest"
+    "js-lint": "yarn eslint src/js --ignore-pattern __test__",
+    "build": "NODE_ENV=prod yarn gulp publish",
+    "start": "yarn gulp vendor:dev & NODE_ENV=dev yarn webpack-dev-server --hot --inline -d",
+    "test": "yarn jest && yarn js-lint"
   },
   "repository": {
     "type": "git",
@@ -24,6 +23,9 @@
   "bugs": {
     "url": "https://github.com/seeliang/react-redux-router/issues"
   },
+  "engines": {
+    "node": "10"
+  },
   "homepage": "https://github.com/seeliang/react-redux-router#readme",
   "devDependencies": {
     "@babel/core": "^7.7.7",
@@ -33,27 +35,25 @@
     "babel-loader": "^8.0.6",
     "eslint": "^4.4.1",
     "eslint-plugin-react": "^7.2.1",
-    "gulp": "^3.9.1",
+    "gulp": "4",
     "gulp-clean": "^0.3.2",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.6.1",
+    "gulp4-run-sequence": "*",
     "jest": "^20.0.4",
-    "react-test-renderer": "^15.6.1",
-    "run-sequence": "^2.1.0",
-    "sl-fe-lint": "^2.0.1",
-    "sl-gt-synclint": "^1.1.1",
-    "webpack": "^3.5.5",
-    "webpack-dev-server": "^2.7.1",
-    "webpack-stream": "^4.0.0",
-    "yarn": "^0.27.5"
+    "react-test-renderer": "^16.12.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1",
+    "webpack-stream": "^4.0.0"
   },
   "dependencies": {
     "axios": "^0.16.2",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-redux": "^5.0.6",
-    "react-router-dom": "^4.1.2",
-    "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   }
 }

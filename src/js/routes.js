@@ -1,62 +1,42 @@
-import React from 'react';
-
-import { HashRouter as Router, Route, Redirect} from 'react-router-dom';
+import React , {useEffect}from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import {feedFetch} from '../js/actions';
+import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 
 import Loading from '../atomic/pages/loading';
 import Page from '../atomic/pages/page';
 import People from '../atomic/pages/people';
 
-class Routes extends React.Component {
-  displayName: 'Routes';
-  constructor(props) {
-    super(props);
-  }
-
-  componentWillMount () {
-    if(this.props.feed.fetched === false) {
-      this.props.feedFetch('people');
-    }
-  }
-
-  render() {
-    if(this.props.feed.fetched === false) {
-      return (
-        <Loading feed={this.props.feed}
-          feedFetch={this.props.feedFetch}
-        />);
-    }
+const
+  Routes = () => {
+  //demo error fetch
+    const {feed} = useSelector(state => state),
+      dispatch = useDispatch();
+    useEffect(() => {
+      if(feed.status.fetched === false) {
+        dispatch(feedFetch('people.jso'));
+      }
+    },[]);
 
     return (
       <Router>
         <div>
-          <Route exact
-            path="/"
-            render={() => (
-              <Redirect to="/page"/>
-            )}
-          />
-          <Route
-            path="/page"
-            render={() => (
-              <Page
-                feed={this.props.feed}
-                feedFetch={this.props.feedFetch}
-              />
-            )}
-          />
-          <Route
-            path="/people/:id"
-            render={(props) => (
-              <People
-                feed={this.props.feed}
-                {...props}
-              />
-            )}
-          />
+          <Route path="/" >
+            <Redirect to="/loading" />
+          </Route>
+          <Route path="/loading">
+            <Loading />
+          </Route>
+          <Route path="/people/:id">
+            <People />
+          </Route>
+          <Route path="/page">
+            <Page/>
+          </Route>
         </div>
       </Router>
     );
-  }
-}
+  };
+
 
 export default Routes;

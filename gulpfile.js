@@ -7,43 +7,33 @@ const clean = require('gulp-clean'),
   },
   replace = require('gulp-replace'),
   rename = require('gulp-rename'),
-  sequence = require('run-sequence'),
+  sequence = require('gulp4-run-sequence'),
   webpack = require('webpack-stream');
-
-require('sl-gt-synclint')(gulp);
-
 gulp.task('html', () => {
   return gulp.src('./index.html')
     .pipe(replace('.js','.min.js'))
+    .pipe(replace('.development.','.production.'))
     .pipe(replace('http://localhost:8080/dist/',''))
     .pipe(gulp.dest(paths.dist));
 });
 
 gulp.task('clean',() => {
-  return gulp.src(paths.dist)
+  return gulp.src(paths.dist, { allowEmpty: true })
     .pipe(clean());
 });
 
 gulp.task('vendor:publish', () => {
   return gulp.src([
-    paths.package + 'axios/dist/axios.min.js', // TODO: simplify this 
-    paths.package + 'react/dist/react.min.js',
-    paths.package + 'react-dom/dist/react-dom.min.js',
-    paths.package + 'react-redux/dist/react-redux.min.js',
-    paths.package + 'react-router-dom/umd/react-router-dom.min.js',
-    paths.package + 'redux/dist/redux.min.js'
+    paths.package + 'react/cjs/react.production.min.js',
+    paths.package + 'react-dom/cjs/react-dom.production.min.js'
   ])
     .pipe(gulp.dest(paths.dist + 'js/vendor/'));
 });
 
 gulp.task('vendor:dev', () => {
   return gulp.src([
-    paths.package + 'axios/dist/axios.js',
-    paths.package + 'react/dist/react.js',
-    paths.package + 'react-dom/dist/react-dom.js',
-    paths.package + 'react-redux/dist/react-redux.js',
-    paths.package + 'react-router-dom/umd/react-router-dom.js',
-    paths.package + 'redux/dist/redux.js'
+    paths.package + 'react/cjs/react.development.js',
+    paths.package + 'react-dom/cjs/react-dom.development.js'
   ])
     .pipe(gulp.dest(paths.dist + 'js/vendor/'));
 });
@@ -65,11 +55,12 @@ gulp.task('js:clean', () => {
     .pipe(clean());
 });
 
-gulp.task('publish', () => {
+gulp.task('publish', (done) => {
   sequence(
     'clean',
     ['html','webpack','vendor:publish'],
     'js:rename',
     'js:clean'
   );
+  return done();
 });

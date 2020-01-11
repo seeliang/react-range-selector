@@ -1,20 +1,16 @@
 /* TODO: 
   1.could use Commons Chunk in build config
   CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
-  2.add gzip when it is necessay
+  2.add gzip when it is necessary
   https://github.com/webpack-contrib/compression-webpack-plugin
 */
-const webpack = require('webpack'),
+const
   base = require('./webpack.base.js'),
   prod = {
     devtool: 'nosources-source-map',
-    plugins: [
-      new webpack.optimize.UglifyJsPlugin({
-        output: {
-          comments: false
-        }
-      })
-    ]
+    optimization: {
+      minimize: true
+    }
   };
 
 module.exports = Object.assign(base, prod);
