@@ -24,16 +24,16 @@ gulp.task('clean',() => {
 
 gulp.task('vendor:publish', () => {
   return gulp.src([
-    paths.package + 'react/cjs/react.production.min.js',
-    paths.package + 'react-dom/cjs/react-dom.production.min.js'
+    paths.package + 'react/umd/react.production.min.js',
+    paths.package + 'react-dom/umd/react-dom.production.min.js'
   ])
     .pipe(gulp.dest(paths.dist + 'js/vendor/'));
 });
 
 gulp.task('vendor:dev', () => {
   return gulp.src([
-    paths.package + 'react/cjs/react.development.js',
-    paths.package + 'react-dom/cjs/react-dom.development.js'
+    paths.package + 'react/umd/react.development.js',
+    paths.package + 'react-dom/umd/react-dom.development.js'
   ])
     .pipe(gulp.dest(paths.dist + 'js/vendor/'));
 });
