@@ -14,6 +14,10 @@ const feed = (state = {}, action) => {
     state = {...state, status: { ...state.status, error:action.content, fetchError: true}} ;
     break;
   }
+  case 'CLEAN ERROR': {
+    state = {...state, status: { ...state.status, error:action.content}} ;
+    break;
+  }
   case 'UPDATE API FETCHED': {
     state = {...state, status: { ...state.status, apiFetched: action.content} };
     break;

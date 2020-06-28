@@ -8,6 +8,7 @@ export function feedFetch(url, dispatch = dispatch) {
       .then((response) => {
         dispatch({type: 'RECEIVED', content: response.data});
         dispatch({type: 'UPDATE API FETCHED', content: url});
+        dispatch({type: 'CLEAN ERROR', content: {}});
       })
       .catch((err) => {
         dispatch({type: 'ERROR', content: err});
