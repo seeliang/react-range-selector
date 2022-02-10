@@ -1,7 +1,7 @@
 import React , {useEffect}from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {feedFetch} from '../../js/actions';
-import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import { HashRouter, Route, Redirect} from 'react-router-dom';
 import DataRoute from './dataRoute';
 import Loading from '../../atomic/pages/loading';
 import Page from '../../atomic/pages/page';
@@ -18,7 +18,7 @@ const Routes = () => {
   },[]);
 
   return (
-    <Router>
+    <HashRouter>
       <div>
         <Route exact
           path="/"
@@ -35,7 +35,7 @@ const Routes = () => {
           <Page/>
         </DataRoute>
       </div>
-    </Router>
+    </HashRouter>
   );
 };
 
